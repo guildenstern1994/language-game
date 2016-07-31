@@ -3,6 +3,9 @@ import random
 import string
 import collections
 
+VOWELS = "aeiouy"
+CONSONANTS = "qwrtpsdfghjklzxcvbnm"
+
 def randomChoice(counter):
 	words = []
 	counts = []
@@ -18,7 +21,11 @@ def randomNewWord(word, prob):
 	newWord = list(word)
 	for i in range(0, len(word)):
 		if prob > random.random():
-			newWord[i] = random.choice(string.ascii_lowercase)
+			#change a letter
+			if VOWELS.find(newWord[i]) >= 0:
+				newWord[i] = random.choice(VOWELS)
+			else:
+				newWord[i] = random.choice(CONSONANTS)
 	return "".join(newWord)
 
 class Agent(object):
@@ -66,8 +73,8 @@ with open("WordLists/engLexHigh.txt") as f:
 agents = []
 
 for i in range(0,9):
-	agents.append(Agent(0, lowLex))
-	agents.append(Agent(1, highLex))
+	agents.append(Agent(0, lowLex.copy()))
+	agents.append(Agent(1, highLex.copy()))
 
 for i in range(0,50):
 	alice, bob = numpy.random.choice(agents, 2)
