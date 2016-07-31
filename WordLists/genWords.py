@@ -1,9 +1,14 @@
 import random
-from nltk.corpus import words
+# from nltk.corpus import words
+wordlistfile = open('corncob_lowercase.txt', 'r')
+wordlist = list()
 out_high = open('engLexHigh.txt','w')
 out_low = open('engLexLow.txt', 'w')
 # print words.words()[0]
 def main():
+	for line in wordlistfile:
+		wordlist.append(line[:-2])
+
 	low_words = dict()
 	high_words = dict()
 	used = list()
@@ -45,9 +50,9 @@ def main():
 	out_high.close()
 
 def pick_word(used):
-	w = random.choice(words.words())
+	w = random.choice(wordlist)
 	while w in used:
-		w = random.choice(words.words())
+		w = random.choice(wordlist)
 	used.append(w)
 	return w	
 
