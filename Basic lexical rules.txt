@@ -1,0 +1,15 @@
+Upon meeting another agent:
+	Pick 5 words from vocabulary (probability based on word frequency)
+	If word is not in agent's vocabulary
+	BASE_COPY =	.2 x MODIFIERS chance of copying word to vocabulary
+	if copy successful, further .05 x MODIFIERS chance of changing each letter in the word
+	update word frequency for both agents
+
+Every 5 iterations:
+	1% chance of losing each of the least frequent words in vocabulary
+
+Modifiers
+	if same class: BASE_COPY x 1.5
+	if other is lower class: BASE_COPY x .5
+	if other is higher class: permutation rate is x 3
+	if of lowest class, 2% chance of losing each of the least frequency words
