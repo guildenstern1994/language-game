@@ -1,8 +1,10 @@
 import numpy
+import random
+import string
 from random import random
 import collections
 
-def randomChoice(counter){
+def randomChoice(counter):
 	words = []
 	counts = []
 	for word in counter:
@@ -12,7 +14,12 @@ def randomChoice(counter){
 	normal_counts = [i/total for i in counts]
 
 	return(numpy.random.choice(words, 5, replace = True, p = normal_counts))
-}
+
+def randomNewWord(word, prob):
+	for i in range(0, len(word)):
+		if prob > random():
+			word[i] = random(string.ascii_lowercase)
+	return word
 
 class Agent(object):
 
@@ -23,25 +30,44 @@ class Agent(object):
 	def talk(self, agent):
 		MOD = (1.5 if self.caste == agent.caste else 1) * (.5 if self.caste > agent.caste else 1)
 		PERM = (3 if self.caste < agent.caste else 1)
-		LOSE = (2 if self.caste == 0 else 1)
-		BASE_COPY = .2
 
 		chosen = randomChoice(agent.lexicon)
 
 		for word in chosen:
 			if word not in self.lexicon.keys():
-				if BASE_COPY * MOD > random():
-					print "WOOSH"
+				if .2 * MOD > random():
+					newWord = randomNewWord(word, .05 * PERM)
+					self.lexicon[newWord] = 10?
 
-castes = [0,1,2]
-lowerLexicon = collections.Counter()
-lowerLexicon["hello"] = 3
-lowerLexicon["goodbye"] = 2
+	def forget(self):
+		LOSE = (2 if self.caste == 0 else 1)
 
-alice = Agent(0, lowerLexicon)
-bob = Agent(0, lowerLexicon)
+		n = 10
+		least_common = self.lexicon.most_common()[:-n-1:-1]
 
-print(bob.talk(alice))
+		for word in least_common:
+			if .01 * LOSE > random():
+				del self.lexicon[word]
 
-print(lowerLexicon.most_common(2))
-print(lowerLexicon.keys())
+lowLex = collections.Counter()
+highLex = collections.Counter()
+
+
+with open("WordLists/engLexLow.txt") as f:
+	for line in f:
+		word, freq = line.split()
+		lowLex[word] = float(freq)
+
+with open("WordLists/engLexHigh.txt") as f:
+	for line in f:
+		word, freq = line.split()
+		highLex[word] = float(freq)
+
+agents = []
+
+for i in range(0,9):
+	agents.append(Agent(0, lowLex))
+	agents.append(Agent(1, highLex))
+
+
+
