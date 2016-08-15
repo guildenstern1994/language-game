@@ -13,9 +13,15 @@ def printDict(dictionary):
 		print key
 		print dictionary[key]
 		print '\n'
+def mergeDict(x,y):
+	z = x.copy()
+	z.update(y)
+	return z
 
 consonantsIPAToInternal = reverseDict(consonantsInternalToIPA)
 vowelsIPAToInternal = reverseDict(vowelsInternalToIPA)
+IPAToInternal = mergeDict(consonantsIPAToInternal, vowelsIPAToInternal)
+InternalToIPA = mergeDict(consonantsInternalToIPA, vowelsInternalToIPA)
 # print "consonantsInternalToIPA\n"
 # printDict(consonantsInternalToIPA)
 # print"vowelsInternalToIPA\n"
