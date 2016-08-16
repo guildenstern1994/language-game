@@ -8,6 +8,7 @@ import math
 import os
 import codecs
 import sys
+import copy
 from sets import Set
 sys.path.append(os.path.abspath("./IPA_Mappings/"))
 from letterMapping import IPAToInternal
@@ -92,31 +93,34 @@ class Agent(object):
 		self.caste = caste
 		self.lexicon = lexicon
 		self.semLex = dict()
-		pi = defaultdict(lambda:0.0)			
-		#prepare semantic lexicon for later permutations, I am aware that I am mapping things to themselves
-		for word in lexicon:
-			self.semLex[word] = word
-			encoding = tuple(word.internal)
-			for l in encoding:
-				pi[l] += 1.0
-		self.lexSize = len(self.lexicon)
-		for phon in pi:
-			pi[phon] = pi[phon] / self.lexSize
-		self.phoneticInventory = pi
+		for word in self.lexicon:
+			self.semLex[word.semantic] = word			
+		calculate_frequency(self)
 
 	def talk(self, agent):
-		pass
+
+
 		#TODO new talk function
 		# MOD = (1.5 if self.caste == agent.caste else 1) * (.5 if self.caste > agent.caste else 1) * (2 if self.caste < agent.caste else 1)
 		# PERM = (3 if self.caste < agent.caste else 1)
+		toTell = []
+		for i in range(0, 5):
+			chosen = random.choice(tuple(agent.lexicon))
 
-		# chosen = randomChoice(agent.lexicon)
+			prob = random.random()
+			w = chosen
+			if prob < 1:
+				w = discont_assimilate(chosen, self)
+			elif prob < .05:
+				pass
+				# w = cont_assimilate(chosen, self)
+			toTell.append(w)
+		tell(toTell, agent)
 
-		# for word in chosen:
-		# 	if .2 * MOD > random.random():
-		# 		newWord = randomNewWord(word, .05 * PERM)
-		# 		if newWord not in self.lexicon.keys():
-		# 			self.lexicon[newWord] = agent.lexicon[word] + float(random.choice(range(-25,25, 5))/100.0)
+			# 	if .2 * MOD > random.random():
+			# 		newWord = randomNewWord(word, .05 * PERM)
+			# 		if newWord not in self.lexicon.keys():
+			# 			self.lexicon[newWord] = agent.lexicon[word] + float(random.choice(range(-25,25, 5))/100.0)
 
 	def forget(self):
 		pass
@@ -139,7 +143,102 @@ class Word(object):
 		self.parent = parent
 		self.grandparent = grandparent
 		self.ipa = ipa
+		self.semantic = hash(ipa)
 		self.internal = internal
+
+
+def tell(wordList, agent):
+	for word in wordList:
+
+		if word not in agent.lexicon:
+			print "new word?"
+			if word.semantic in agent.semLex:
+				print "semantic match"
+				prob = random.random()
+				if prob < .5:
+					print "learned %s" % word.ipa
+					agent.lexicon.remove(agent.semLex[word.semantic])
+					agent.lexicon.add(word)
+					agent.semLex[word.semantic] = word
+					calculate_frequency(agent)
+
+
+def calculate_frequency(agent):
+	pi = defaultdict(lambda:0.0)
+	for word in agent.lexicon:
+		encoding = tuple(word.internal)
+
+		for l in encoding:
+			pi[l] += 1.0
+	agent.lexSize = len(agent.lexicon)
+		# print agent.lexSize
+	for phon in pi:
+		# print pi[phon]
+		pi[phon] = pi[phon] / agent.lexSize
+	agent.phoneticInventory = pi
+
+def discont_assimilate(word, agent):
+	#TODO Make dependent on frequency
+	phon = random.choice(word.internal)
+	change = [-.5] * 10 + [.5] * 10 + [-1] * 5 + [1] * 5
+	new_phon = phon
+	new_phon += random.choice(change)
+	new_word = word.internal[:]
+	for i in range(0, len(word.internal)):
+		# print word.internal[i]
+		# print phon
+		if word.internal[i] == phon:
+			# print "WOO"
+			new_word[i] = new_phon
+	# print phon
+	# print new_phon
+	# print new_word
+	# print word.internal
+	# print '\n'
+	# print "changed from %s to %s"% str(word.internal), str(new_word)
+	legal = check_legal(new_phon, new_word, agent)
+	if legal:
+		# print "legal assimilation"
+		word = update_word(word, new_word, agent)
+		# print "illegal assimilation"
+	return word
+
+
+def cont_assimilate(word, agent):
+	pass
+def check_legal(phon, word, agent):
+	if agent.phoneticInventory[phon] < 0.01:
+		# print "no phoneme %s" % phon
+		# print agent.phoneticInventory
+		return False
+	for w in agent.lexicon:
+		if w.internal == word:
+			# print "found copy of %s" % w.ipa
+			# print "original %s" % oldIPA
+			return False
+	# print "legal!"
+	return True
+
+def update_word(word, newInternal, agent):
+	newIPA = ''
+	for l in newInternal:
+		newIPA += InternalToIPA[l]
+	# print "Change occurred from"
+	# print word.ipa
+	# print newIPA
+	new_word = copy.deepcopy(word)
+	new_word.grandparent = word.parent
+	new_word.parent = word.ipa
+	new_word.ipa = newIPA
+	new_word.internal = newInternal
+	agent.lexicon.remove(word)
+	agent.lexicon.add(new_word)
+	agent.semLex[word.semantic] = new_word
+	print "updated"
+	return new_word
+
+
+
 
 #TODO: new file read-in 
 lex = Set()
@@ -185,26 +284,26 @@ agents = []
 for i in range(0,9):
 	agents.append(Agent(0, lex.copy()))
 
-print "Agent: "
-a = agents[0]
-for word in a.lexicon:
-	print word.ipa
-	print word.internal
-	print "\n"
-for p in a.phoneticInventory:
-	print p
-	print a.phoneticInventory[p]
-	print '\n'
+# print "Agent: "
+# a = agents[0]
+# for word in a.lexicon:
+# 	print word.ipa
+# 	print word.internal
+# 	print "\n"
+# for p in a.phoneticInventory:
+# 	print p
+# 	print a.phoneticInventory[p]
+# 	print '\n'
 # for i in range(0,9):
 # 	lowAgents.append(Agent(0, lowLex.copy()))
 # 	highAgents.append(Agent(1, highLex.copy()))
 
 # allAgents = lowAgents + highAgents
 
-# for i in range(0,1000):
-# 	alice, bob = numpy.random.choice(allAgents, 2)
-# 	alice.talk(bob)
-# 	bob.talk(alice)
+for i in range(0,100000):
+	alice, bob = numpy.random.choice(agents, 2)
+	alice.talk(bob)
+	bob.talk(alice)
 # 	if i % 5 == 0:
 # 		for agent in allAgents:
 # 			agent.forget()
