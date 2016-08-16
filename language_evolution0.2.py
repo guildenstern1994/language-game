@@ -88,14 +88,14 @@ def randomNewWord(word, prob):
 
 class Agent(object):
 
-#NEWNEW ADDED FIELDS
 	def __init__(self, caste, lexicon):
 		self.caste = caste
 		self.lexicon = lexicon
+		
+		calculate_frequency(self)
 		self.semLex = dict()
 		for word in self.lexicon:
-			self.semLex[word.semantic] = word			
-		calculate_frequency(self)
+			self.semLex[word.semantic] = word	
 
 	def talk(self, agent):
 
@@ -104,13 +104,20 @@ class Agent(object):
 		# MOD = (1.5 if self.caste == agent.caste else 1) * (.5 if self.caste > agent.caste else 1) * (2 if self.caste < agent.caste else 1)
 		# PERM = (3 if self.caste < agent.caste else 1)
 		toTell = []
-		for i in range(0, 5):
-			chosen = random.choice(tuple(agent.lexicon))
+		chosen = random.sample(tuple(self.lexicon), 5)
+
+		for i in chosen:
 
 			prob = random.random()
-			w = chosen
-			if prob < 1:
-				w = discont_assimilate(chosen, self)
+			w = i
+			# print i
+			if prob < .05:
+				# print i
+				# if i not in self.lexicon:
+					# print "surprise"
+				# print "sem check"
+				# print self.semLex[i.semantic]
+				w = discont_assimilate(i, self)
 			elif prob < .05:
 				pass
 				# w = cont_assimilate(chosen, self)
@@ -151,14 +158,15 @@ def tell(wordList, agent):
 	for word in wordList:
 
 		if word not in agent.lexicon:
-			print "new word?"
+			# print "new word?"
 			if word.semantic in agent.semLex:
-				print "semantic match"
+				# print "semantic match"
 				prob = random.random()
 				if prob < .5:
 					print "learned %s" % word.ipa
 					agent.lexicon.remove(agent.semLex[word.semantic])
 					agent.lexicon.add(word)
+					# print type(word)
 					agent.semLex[word.semantic] = word
 					calculate_frequency(agent)
 
@@ -179,6 +187,20 @@ def calculate_frequency(agent):
 
 def discont_assimilate(word, agent):
 	#TODO Make dependent on frequency
+	# print word
+	# print word.semantic
+	# print "sem confirm"
+	# print agent.semLex[word.semantic]
+	# print word.ipa
+	# print word.parent
+
+	# if word not in agent.lexicon:
+		# print "line 184"
+		# if agent.semLex[word.semantic] in agent.lexicon:
+			# print agent.semLex[word.semantic].ipa
+			# print "confusion"
+			# print agent.semLex[word.semantic].parent
+		# print word
 	phon = random.choice(word.internal)
 	change = [-.5] * 10 + [.5] * 10 + [-1] * 5 + [1] * 5
 	new_phon = phon
@@ -233,8 +255,8 @@ def update_word(word, newInternal, agent):
 	new_word.internal = newInternal
 	agent.lexicon.remove(word)
 	agent.lexicon.add(new_word)
-	agent.semLex[word.semantic] = new_word
-	print "updated"
+	agent.semLex[new_word.semantic] = new_word
+	# print "updated"
 	return new_word
 
 
@@ -300,7 +322,7 @@ for i in range(0,9):
 
 # allAgents = lowAgents + highAgents
 
-for i in range(0,100000):
+for i in range(0,10000):
 	alice, bob = numpy.random.choice(agents, 2)
 	alice.talk(bob)
 	bob.talk(alice)
