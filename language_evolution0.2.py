@@ -86,6 +86,12 @@ def randomNewWord(word, prob):
 			# 	newWord[i] = random.choice(CONSONANTS)
 	return "".join(newWord)
 
+def isProb(prob, goal):
+	ret = False
+	if prob < goal:
+		ret = True
+	return ret
+
 class Agent(object):
 
 	def __init__(self, caste, lexicon):
@@ -96,6 +102,8 @@ class Agent(object):
 		self.semLex = dict()
 		for word in self.lexicon:
 			self.semLex[word.semantic] = word	
+
+
 
 	def talk(self, agent):
 
@@ -111,16 +119,19 @@ class Agent(object):
 			prob = random.random()
 			w = i
 			# print i
-			if prob < .05:
+			done = False
+			if isProb(prob, .05) and not done:
 				# print i
 				# if i not in self.lexicon:
 					# print "surprise"
 				# print "sem check"
 				# print self.semLex[i.semantic]
 				w = discont_assimilate(i, self)
-			elif prob < .05:
-				pass
-				# w = cont_assimilate(chosen, self)
+				done = True
+			prob = random.random()
+			if isProb(prob, .01) and not done:
+				w = cont_assimilate(i, self)
+				done = True
 			toTell.append(w)
 		tell(toTell, agent)
 
@@ -185,6 +196,8 @@ def calculate_frequency(agent):
 		pi[phon] = pi[phon] / agent.lexSize
 	agent.phoneticInventory = pi
 
+
+#change phoneme to similar phoneme
 def discont_assimilate(word, agent):
 	#TODO Make dependent on frequency
 	# print word
@@ -225,9 +238,98 @@ def discont_assimilate(word, agent):
 		# print "illegal assimilation"
 	return word
 
-
+#change phoneme to copy next or previous similar phoneme eg comnubium -> connubium
 def cont_assimilate(word, agent):
-	pass
+	try:
+		ind = random.choice(range(1, len(word.internal) - 1))
+	except IndexError:
+		return word
+	comp = ind + 1
+	left = True
+	if random.random() > .75:
+		comp = ind - 1
+		left = False
+	if check_Distance(word.internal[ind], word.internal[comp], 100):
+		if left:
+			substr = word.internal[ind:comp+2]
+			newsubstr = substr[:]
+			newsubstr[0] = substr[1]
+			# substr[0] = substr[1]
+			if (comp + 2) > len(word.internal):
+				return word
+		else:
+			substr = word.internal[comp:ind+2]
+			newsubstr = substr[:]
+			newsubstr[1] = substr[0]
+			# substr[1] = substr[0]
+			if (ind + 2) > len(word.internal):
+				return word
+
+		# print "Old Word: " + word.ipa
+		new_word =[]
+		l = 0
+		while l < len(word.internal):
+			# print l
+			if (l + 3) <= len(word.internal):
+				# print substr
+				if word.internal[l] == substr[0] and word.internal[l+1] == substr[1] and word.internal[l+2] == substr[2]:
+					for let in newsubstr:
+						new_word.append(let)
+					l += 2
+				else:
+					new_word.append(word.internal[l])
+			else:
+				new_word.append(word.internal[l])
+			l += 1
+
+		# sInd = word.internal.find(substr)
+		# new_word = word.internal[:sInd]
+		# new_word += substr
+		# new_word += word.internal[sInd+3:]
+		# print word.internal
+		# print new_word
+		word = update_word(word, new_word, agent)
+		# print "New Word: " + word.ipa
+		for w in agent.lexicon:
+			if len(w.internal) > 3:
+				change = False
+				new_word =[]
+				l = 0
+				while l < len(w.internal):
+					if l + 3 <= len(w.internal):
+						# print substr
+						if w.internal[l] == substr[0] and w.internal[l+1] == substr[1] and w.internal[l+2] == substr[2]:
+							# new_word = w.internal[:l]
+							for let in newsubstr:
+								new_word.append(let)
+							change = True
+							l += 2
+						else:
+							new_word.append(w.internal[l])
+					else: 
+						new_word.append(w.internal[l])
+					l += 1
+				# sInd = w.internal.find(substr)
+				# new_word = w.internal[:sInd]
+				# new_word += substr
+				# new_word += w.internal[sInd+3:]
+				if change:
+					# print "Old Word: " + w.ipa
+					w = update_word(w, new_word, agent)
+					# print "New Word: " + w.ipa
+
+	return word
+
+
+
+def check_Distance(first, second, dist):
+	d = abs(first - second)
+	if d < dist and d != 0:
+		return True
+	else:
+		return False
+	
+
 def check_legal(phon, word, agent):
 	if agent.phoneticInventory[phon] < 0.01:
 		# print "no phoneme %s" % phon
