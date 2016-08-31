@@ -132,6 +132,10 @@ class Agent(object):
 			if isProb(prob, .01) and not done:
 				w = cont_assimilate(i, self)
 				done = True
+			prob = random.random()
+			if isProb(prob, .01) and not done:
+				w = dissimilate(i, self)
+				done = True
 			toTell.append(w)
 		tell(toTell, agent)
 
@@ -318,6 +322,44 @@ def cont_assimilate(word, agent):
 					w = update_word(w, new_word, agent)
 					# print "New Word: " + w.ipa
 
+	return word
+
+def dissimilate(word, agent):
+	l1 = random.choice(word.internal)
+	l2 = random.choice(word.internal)
+	ind1 = word.internal.index(l1)
+	ind2 = word.internal.index(l2)
+	if l1 == l2: #exit without change
+		if abs(ind1 - ind2) == 1:
+			return word
+	if check_Distance(l1, l2, 50):
+		mod = 1
+		change = [1] * 5 + [10] * 2 + [100] * 2 + [150] * 2
+		if ((l1 - int(l1)) - (l2 - int(l2))) == 0:
+			# print "CASE"
+			change += [.5] * 10 + [.25] * 10
+		if l1 > l2:
+			mod = -1
+		prob = random.random()
+		if prob < .5:
+				l1 -= random.choice(change) * mod
+				# DO SHIFT LEFT
+		elif prob > .95:
+				# DO SHIFT BOTH 
+				l1 -= random.choice(change) * mod
+				l2 += random.choice(change) * mod
+		else:
+			l2 += random.choice(change) * mod
+				# DO SHIFT RIGHT
+		newWord = word.internal[:]
+		newWord[ind1] = l1
+		newWord[ind2] = l2
+		if check_legal(l1, word, agent) and check_legal(l2, word, agent):
+			# print "Old: " + word.ipa
+			# print InternalToIPA[l1]
+			# print InternalToIPA[l2]
+			word = update_word(word, newWord, agent)
+			# print "New: " + word.ipa
 	return word
 
 
