@@ -86,7 +86,8 @@ def randomNewWord(word, prob):
 			# 	newWord[i] = random.choice(CONSONANTS)
 	return "".join(newWord)
 
-def isProb(prob, goal):
+def isProb(goal):
+	prob = random.random()
 	ret = False
 	if prob < goal:
 		ret = True
@@ -120,7 +121,7 @@ class Agent(object):
 			w = i
 			# print i
 			done = False
-			if isProb(prob, .05) and not done:
+			if isProb(.05) and not done:
 				# print i
 				# if i not in self.lexicon:
 					# print "surprise"
@@ -128,13 +129,14 @@ class Agent(object):
 				# print self.semLex[i.semantic]
 				w = discont_assimilate(i, self)
 				done = True
-			prob = random.random()
-			if isProb(prob, .01) and not done:
+			if isProb(.01) and not done:
 				w = cont_assimilate(i, self)
 				done = True
-			prob = random.random()
-			if isProb(prob, .01) and not done:
+			if isProb(.01) and not done:
 				w = dissimilate(i, self)
+				done = True
+			if isProb(.05) and not done: #this should be less random, or at least check for bigram freq between phonemes
+				w = metathesis(i, self)
 				done = True
 			toTell.append(w)
 		tell(toTell, agent)
@@ -362,6 +364,52 @@ def dissimilate(word, agent):
 			# print "New: " + word.ipa
 	return word
 
+def metathesis(word, agent):
+	if len(word.internal) < 3 and len(word.internal) != 0:
+		return word
+	if isProb(.3):
+		return hyperthesis(word, agent)
+	l1 = random.choice(range(1, len(word.internal) - 1))
+	l2 = l1 + 1
+	while l2 < len(word.internal) - 1 and word.internal[l2] >= 2000:
+		if isProb(.5):
+			break
+		else:
+			l2 += 1
+	if not redundant(l1, l2, word.internal):
+		newWord = word.internal[:]
+		newWord.pop(l2)
+		newWord.insert(l1, word.internal[l2])
+		# print "Metathesis"
+		# print "Old: " + word.ipa
+		word = update_word(word, newWord, agent)
+		# print "New: " + word.ipa
+	return word
+
+
+
+def hyperthesis(word, agent):
+	l1 = random.choice(range(1, len(word.internal) - 1))
+	l2 = random.choice(range(1, len(word.internal) - 1))
+	newWord = word.internal[:]
+	if check_Distance(word.internal[l1], word.internal[l2], 700) and not redundant(l1, l2, word.internal) and word.internal[l1] != word.internal[l1+1]:
+		# print "Hyperthesis"
+		# print "Old: " + word.ipa
+		newWord[l1] = word.internal[l2]
+		newWord[l2] = word.internal[l1]
+		word = update_word(word, newWord, agent)
+		# print "New: " + word.ipa
+	return word
+
+def redundant(l1, l2, word):
+	if word[l1] == word[l2]:
+		return True
+	elif word[l1 - 1] == word[l1] or word[l1 - 1] == word[l2]:
+		return True
+	elif word[l2 - 1] == word[l2]:
+		return True
+	else:
+		return False
 
 
 def check_Distance(first, second, dist):
@@ -377,11 +425,11 @@ def check_legal(phon, word, agent):
 		# print "no phoneme %s" % phon
 		# print agent.phoneticInventory
 		return False
-	for w in agent.lexicon:
-		if w.internal == word:
+	# for w in agent.lexicon:
+		# if w.internal == word:
 			# print "found copy of %s" % w.ipa
 			# print "original %s" % oldIPA
-			return False
+			# return False
 	# print "legal!"
 	return True
 
