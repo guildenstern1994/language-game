@@ -138,6 +138,7 @@ class Agent(object):
 			if isProb(.05) and not done: #this should be less random, or at least check for bigram freq between phonemes
 				w = metathesis(i, self)
 				done = True
+			#At some point tone would be nice
 			toTell.append(w)
 		tell(toTell, agent)
 
@@ -378,14 +379,56 @@ def metathesis(word, agent):
 			l2 += 1
 	if not redundant(l1, l2, word.internal):
 		newWord = word.internal[:]
-		newWord.pop(l2)
-		newWord.insert(l1, word.internal[l2])
+		if l2 < len(newWord) - 1 and newWord[l2] < 2000 and newWord[l1+1] > 2000 and newWord[l2+1] > 2000:
+			# print 'FANCY'
+			newWord.pop(l2)
+			newWord.pop(l2)
+			newWord.insert(l1, word.internal[l2+1])
+			newWord.insert(l1, word.internal[l2])
+		else:
+			newWord.pop(l2)
+			newWord.insert(l1, word.internal[l2])
 		# print "Metathesis"
 		# print "Old: " + word.ipa
+		if l2 < len(newWord)-1:
+			if newWord[l2] > 2000 and newWord[l2+1] > 2000:
+				if isProb(.75):
+					newWord = correct_Double_Vowel(l2, newWord, agent)
+		if l1 > 0:
+			if newWord[l1] > 2000 and newWord[l1-1] > 2000:
+				if isProb(.75):
+					newWord = correct_Double_Vowel(l1-1, newWord, agent)
 		word = update_word(word, newWord, agent)
 		# print "New: " + word.ipa
 	return word
 
+def correct_Double_Vowel(loc, w, agent):
+	# print "problem"
+	print w
+	prob = random.random()
+	if prob < .25:
+		w.pop(loc)
+	elif prob < .5:
+		w.pop(loc+1)
+	else:
+		l1 = w[loc]
+		l2 = w[loc + 1]
+		mid = (l1 + l2) / 2.0
+		mid = int(mid)
+		mid = float(mid)
+		w.pop(loc+1)
+		direction = random.choice([-.5, .5])
+		while mid not in InternalToIPA:
+			mid += direction
+			if mid not in agent.phoneticInventory:
+				if isProb(.25):
+					print mid
+					mid += direction
+
+		w[loc] = mid
+	# print "solution"
+	print w
+	return w
 
 
 def hyperthesis(word, agent):
