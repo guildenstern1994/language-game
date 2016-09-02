@@ -121,6 +121,7 @@ class Agent(object):
 			w = i
 			# print i
 			done = False
+			#I'm thinking maybe we can get rid of done and just drop the target probability
 			if isProb(.05) and not done:
 				# print i
 				# if i not in self.lexicon:
@@ -137,6 +138,9 @@ class Agent(object):
 				done = True
 			if isProb(.05) and not done: #this should be less random, or at least check for bigram freq between phonemes
 				w = metathesis(i, self)
+				done = True
+			if isProb(.1) and not done:
+				w = haplogy(i, self)
 				done = True
 			#At some point tone would be nice
 			toTell.append(w)
@@ -404,7 +408,7 @@ def metathesis(word, agent):
 
 def correct_Double_Vowel(loc, w, agent):
 	# print "problem"
-	print w
+	# print w
 	prob = random.random()
 	if prob < .25:
 		w.pop(loc)
@@ -422,12 +426,12 @@ def correct_Double_Vowel(loc, w, agent):
 			mid += direction
 			if mid not in agent.phoneticInventory:
 				if isProb(.25):
-					print mid
+					# print mid
 					mid += direction
 
 		w[loc] = mid
 	# print "solution"
-	print w
+	# print w
 	return w
 
 
@@ -442,6 +446,23 @@ def hyperthesis(word, agent):
 		newWord[l2] = word.internal[l1]
 		word = update_word(word, newWord, agent)
 		# print "New: " + word.ipa
+	return word
+
+def haplogy(word, agent):
+	if len(word.internal) < 6:
+		return word
+	l1 = random.choice(range(1, len(word.internal) - 4))
+	l2 = l1 + 1
+	l3 = l2 + 1
+	l4 = l3 + 1
+	if word.internal[l1] == word.internal[l3]:
+		if check_Distance(word.internal[l2], word.internal[l4], 50) or word.internal[l2] == 2303.0:
+			print "Old: "  + word.ipa
+			newWord = word.internal[:]
+			newWord.pop(l1)
+			newWord.pop(l1)
+			word = update_word(word, newWord, agent)
+			print "New: " + word.ipa
 	return word
 
 def redundant(l1, l2, word):
