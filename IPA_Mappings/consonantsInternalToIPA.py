@@ -17,8 +17,8 @@ consonantsInternalToIPA = {
 	101.5: u'\u0062', #voiced bilabial stop
 	102.0: u'\u0070\u032A', #voiceless labiodental stop
 	102.5: u'\u0062\u032A', #voiced labiodental stop
-	113.0: u'\u0074', #voiceless alveolar stop
-	113.5: u'\u0064', #voiced alveolar stop
+	112.0: u'\u0074', #voiceless alveolar stop
+	112.5: u'\u0064', #voiced alveolar stop
 	114.0: u'\u0288', #voiceless retroflex stop
 	114.5: u'\u0256', #voiced retroflex stop
 	122.0: u'\u0063', #voiceless palatal stop
@@ -68,9 +68,9 @@ consonantsInternalToIPA = {
 	531.5: u'\u0295', #voiced pharyngeal fricative
 	532.0: u'\u0068', #voiceless glottal fricative
 	532.5: u'\u0266', #voiced glottal fricative
-	602.0: u'\u028B', #labiodental approximant
-	622.0: u'\u0279', #alveolar approximant
-	624.0: u'\u027B', #retroflex approximant
+	602.5: u'\u028B', #labiodental approximant
+	622.5: u'\u0279', #alveolar approximant
+	624.5: u'\u027B', #retroflex approximant
 	632.0: u'\u006A\u030A', #voiceless palatal approximant
 	632.25: u'\u0265', #labialized palatal approximant COART
 	632.5: u'\u006A', #voiced palatal approximant
@@ -85,6 +85,8 @@ consonantsInternalToIPA = {
 	801.5: u'\u0299', #bilabial trill
 	812.0: 'r_0', 	#voiceless alveolar trill
 	812.5: u'\u0072', #voiced alveolar trill
+	822.0: 'r_0', 	#voiceless alveolar trill
+	822.5: u'\u0072', #voiced alveolar trill
 	814.5: u'\u027D\u0361\u0072', #voiced retroflex trill
 	824.5: u'\u0280', #uvular trill
 	831.0: u'\u029C', #voiceless epiglottal trill
