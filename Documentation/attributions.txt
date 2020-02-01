@@ -1,0 +1,1 @@
+ipaBook.json: https://github.com/cmmario94/ipa-json

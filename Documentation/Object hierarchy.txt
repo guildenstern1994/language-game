@@ -1,0 +1,83 @@
+Object hierarchy
+
+
+World state
+Purpose: ties together all of the other core objects
+	Name str
+	Regions dict{str: Region}
+	Languages dict{str: Language}
+	Governments dict{str: Government}
+	Settlements dict{str:Settlement})
+
+Region
+Purpose: a geographic area that represents territories in close proximity to each other
+Hardcoded, static container for other objects. Representative of real world geography.
+Example: Essex
+	Name str
+	Society obj
+	Government obj
+	Settlements obj
+	Dominant language string
+	Minority languages string
+
+
+Society
+Purpose: define the classes of people present and their relationships, represents long-term social norms based on material conditions
+Hardcoded, represented as metaphysical labels. Economy dynamics of a region can cause the region's society to switch (e.g increasing wealth for the merchant classes can cause a feudal state to become capitalist) 
+Example: Western European feudalism
+	Name str
+	Classes obj
+	Settlement population ratios constant
+		City population ratio 
+		Town population ratio 
+		Village population ratio 
+	Interaction rules constant
+		City interaction rules
+		Town interaction rules
+		Village interaction rules
+	Population refill default values map
+		for each class
+	Events obj
+	Primary religion str
+
+Government
+Government types and policies are constrained by the ruling class. The ruling class is determined by economy dynamics and events. Regions are determined by events. State religions are constrained by government type and are changed by policies and events. Official and recognized languages are determined by events that are responsive to language dynamics. Base government authority value is determined by events.
+Purpose: A political actor that can impose various restrictions and changes in the territory where it is present
+	Name str
+	Capital region obj
+	Regions obj
+	Ruling class str
+	Government type str
+	State religion str
+	Official languages str
+	Recognized languages str
+	Policies dynamic modifier
+	Base government authority value str
+	Events obj
+
+Settlement
+Purpose: Represent a given community of people in a location
+Size is dependent on the number of people, which can be changed by events and economy dynamics. Languages are determined by language dynamics. Available trades are constrained by the society and government of the region. Some unique trades may be added for flavor (e.g. fishers by the coast)
+Example: London
+	Name str
+	Size str
+	People obj
+	Languages str
+	Available trades map
+		by class
+	Events obj
+
+Language
+Purpose: Represent an average of mutually intelligible dialects
+Instantiated with starting values at the beginning of the game, later determined as an average of dialect features. If dialects no longer pass certain mutual intelligibility checks (or due to certain government policies), a dialect may split and become its own language.
+Example: English
+	Name
+	Dialects obj
+	Lexicon map
+	Word bag set
+	Word ordering str
+	Grammatic rules list
+	Alphabets list
+	Idioms list
+	LFamily str
+	Events obj

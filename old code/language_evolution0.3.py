@@ -13,6 +13,10 @@ from sets import Set
 sys.path.append(os.path.abspath("./IPA_Mappings/"))
 from letterMapping import IPAToInternal
 from letterMapping import InternalToIPA
+# sys.setdefaultencoding() does not exist, here!
+reload(sys)  # Reload does the trick!
+sys.setdefaultencoding('UTF8')
+
 
 def isProb(goal):
 	prob = random.random()
@@ -218,13 +222,14 @@ class Agent(object):
 			options.add(InternalToIPA[IPAToInternal[trigram[loc]] + 400 ])
 		if (IPAToInternal[trigram[loc]] + 300 ) in InternalToIPA:
 			options.add(InternalToIPA[IPAToInternal[trigram[loc]] + 300 ])
-		rep = random.sample(options, 1)[0]
-		trigram = list(trigram)
-		trigram[loc] = rep
-		trigram = tuple(trigram)
-		print ""
-		print "Spiranization occured"
-		return trigram
+		if len(options) != 0:
+			rep = random.sample(options, 1)[0]
+			trigram = list(trigram)
+			trigram[loc] = rep
+			trigram = tuple(trigram)
+			print ""
+			print "Spiranization occured"
+			return trigram
 
 	def elision(self, trigram, loc):
 		trigram = list(trigram)
@@ -271,6 +276,7 @@ class Agent(object):
 			elision = False
 		origString = ''.join(orig)
 		newString = ''.join(new)
+		print new
 		if not elision:
 			internalNewString = [IPAToInternal[new[0]],IPAToInternal[new[1]],IPAToInternal[new[2]]]
 		else:
@@ -352,6 +358,8 @@ def calculate_frequency(agent):
 
 ##Main
 IPAToInternal[u'g'] = 123.5
+IPAToInternal[u'\u0320'] = 512.5
+IPAToInternal[u'\u031f'] = 701.0
 lex = Set()
 f = codecs.open('WordLists/testCorpusIPA.txt', 'r', 'utf-8')
 soup = f.read().split()
@@ -377,8 +385,37 @@ for word in soup:
 	lex.add(Word(word,word,word, outArr))
 f.close()
 agents = []
-for i in range(0,9):
+agentNum = 50
+for i in range(agentNum-1):
 	agents.append(Agent(0, lex.copy(), i))
+
+
+def parentExists(word, agent):
+	parent = word.parent
+	for w in agent.lexicon:
+		if parent == w.parent:
+			return True
+	return False
+
+def talk(agent1, agent2):
+	words = random.sample(agent1.lexicon, 20)
+	for word in words:
+		if word not in agent2.lexicon:
+			if parentExists(word, agent2):
+				if isProb(.5):
+					print "learned word " + word.ipa + " instead of " + word.parent
+					agent2.lexicon.remove(word.parent)
+					agent2.lexicon.add(word)
+				else:
+					print "learned word parent " + word.parent.ipa + " instead of " + word.ipa
+
+					word.ipa = word.parent
+					word.parent = word.grandparent
+					word.grandparent = None
+					# agent1.lexicon.add(word.parent)
+			elif isProb(.9):
+				agent2.lexicon.add(word)
+
 
 
 numiters = 10
@@ -386,9 +423,21 @@ for i in range(0,numiters):
 	print "GENERATION " + str(i)
 	print "~~~~~~~~~~~~~~~~~~~~~~~~"
 	for agent in agents:
-		print "AGENT " + str(agent.num)
+		# print "AGENT " + str(agent.num)
 		agent.isolatedChange()
-		print ""
+		# print ""
+	print "Talk Phase"
+	for i in range((agentNum/2)-1):
+		agentI = agents[i]
+		agentJ = agents[i+(agentNum/2)]
+		for k in range(agentNum/2):
+			if i != k:
+				talk(agentI, agents[k])
+				talk(agents[k], agentI)
+				talk(agentJ, agents[(k+agentNum/2)-1])
+				talk(agents[(k+agentNum/2)-1], agentJ)
+
+
 
 # def randomChoice(counter):
 # 	words = []
