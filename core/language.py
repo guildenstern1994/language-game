@@ -14,9 +14,12 @@ from libs.utils import IPA, ALPHABETS
 
 
 class Language(object):
+    '''
+    TODO: more grammar features
+    '''
     def __init__(self, name, parent, nodes=[], idioms={}, word_bag={}, dialects=None, 
         phonetic_inventory=None, phonetic_probs=None word_order=None, grammar=None, 
-        script=None, script_type="alphabet", has_script=True language_family=None, events=None, event_log=None):
+        script=None, script_type="alphabet", language_family=None, events=None, event_log=None):
         '''
         Parameters:
             name: str
@@ -29,97 +32,83 @@ class Language(object):
         self.nodes = nodes
         self.event_log = []
 
-        if phonetic_inventory is None:
-            self.create_phonetic_inventory()
-        else:
-            self.phonetic_inventory = phonetic_inventory
-
-        if phonetic_probs is None:
-            self.create_phonetic_probs()
-        else:
-            self.phonetic_probs = phonetic_probs
-
-        if word_order is None:
-            self.create_word_order()
-        else:
-            self.word_order = word_order
-
-        if grammar is None:
-            self.create_grammar()
-        else:
-            self.grammar = grammar
-
-        if script is None:
-            self.create_script(has_script=has_script)
-        else:
-            self.script = script
-            self.script_type = script_type
-
-        if language_family is None:
-            self.create_language_family()
-        else:
-            self.language_family = language_family
-
-        if events is None:
-            self.create_events()
-        else:
-            self.events = events
+  
+        self.phonetic_inventory = self.create_phonetic_inventory(phonetic_inventory)
+        self.phonetic_probs = self.create_phonetic_probs(phonetic_probs)
+        self.word_order = self.create_word_order(word_order)
+        self.grammar = self.create_grammar(grammar)
+        self.script = self.create_script(script, script_type)
+        self.language_family = self.create_language_family(language_family)
+        self.events = self.create_events(events)
 
         self.map_phonemes_to_graphemes()
 
         
 
-    def create_phonetic_inventory(self):
+    def create_phonetic_inventory(self, override_value):
         '''
         TODO tweak magic number
         '''
-        self.phonetic_inventory = random.sample(IPA.keys(), 35)
-        self.phonetic_inventory.append('\0')
+        if override_value is not None return override_value
+        phonetic_inventory = random.sample(IPA.keys(), 35)
+        phonetic_inventory.append('\0')
+        return phonetic_inventory
 
 
 
-
-    def create_phonetic_probs(self):
+    def create_phonetic_probs(self, override_value):
         '''
-        TODO tweak magic number
         '''
+        if override_value is not None return override_value
         num_phonemes = len(self.phonetic_inventory)
         probs = {}
         for i in range(num_phonemes):
-            phoneme1 = self.phonetic_inventory[i]
-            probs[phoneme1] = {}
-            prob_sum = 0
-            for j in range(num_phonemes):
-                phoneme2 = self.phonetic_inventory[j]
-                r = random.randint(0,500)
-                probs[phoneme1][phoneme2] = r
-                prob_sum += r
-            for phoneme2 in probs[phoneme1].keys():
-                probs[phoneme1][phoneme2] = float(probs[phoneme][phoneme2]) / float(prob_sum)
+            phoneme = self.phonetic_inventory[i]
+            probs = self.set_prob_for_phoneme(num_phonemes, probs, phoneme)
+        probs = self.set_prob_for_phoneme('^')
+        return probs
 
-        self.phonetic_probs = probs
+    def set_prob_for_phoneme(self, num_phonemes, probs, phoneme1):
+        '''
+        helper function for create_phonetic_probs
+        TODO tweak magic number
+
+        '''
+        probs[phoneme1] = {}
+        prob_sum = 0
+        for j in range(num_phonemes):
+            phoneme2 = self.phonetic_inventory[j]
+            r = random.randint(0,500)
+            probs[phoneme1][phoneme2] = r
+            prob_sum += r
+        for phoneme2 in probs[phoneme1].keys():
+            probs[phoneme1][phoneme2] = float(probs[phoneme][phoneme2]) / float(prob_sum)
+        return probs
 
 
 
-    def create_word_order(self, word_orders=['SOV', 'SVO', 'VSO', 
+    def create_word_order(self, override_value, word_orders=['SOV', 'SVO', 'VSO', 
         'VOS', 'OVS', 'OSV', 'UNF']order_weights=[.41, .354, .069, .018, .008, .003, .137]):
         '''
         Default order_weights correspond to distribution of real-world languages
         '''
-        self.word_order = random.choices(word_orders, order_weights, k=1)
+        if override_value is not None return override_value
+        return random.choices(word_orders, order_weights, k=1)
 
-    def create_grammar(self):
+    def create_grammar(self, override_value):
         '''
-        TODO
+        TODO?
         '''
-        pass
+        if override_value is not None return override_value
+        return None
 
-    def create_script(self, mode="standard", size=None, has_script=True):
+    def create_script(self, override_value, script_type mode="standard", size=None):
         '''
         TODO add other character types and selection modes
         '''
-        if not has_script:
-            self.script_type = "no_type"
+        if override_value is not None return override_value
+        if script_type = "no_script":
+            self.script_type = "no_script"
             return []
         character_set = self.choose_character_set(mode)
         if size is None:
@@ -133,8 +122,9 @@ class Language(object):
                 pass
             elif character_set.type == "alphabet":
                 #TODO
-                self.script = random.sample(character_set.chars, size)
+                script = random.sample(character_set.chars, size)
                 self.script_type = "alphabet"
+                return script
 
             elif character_set.type == "logograph":
                 #TODO
@@ -223,16 +213,69 @@ class Language(object):
 
 
 
-    def create_language_family(self):
+    def create_language_family(self, override_value):
         '''
         TODO implement dynamic update for the discovery of language families
         '''
+        if override_value is not None return override_value
         if self.parent is None:
-            self.language_family = self.name
+            return language_family = self.name
         else:
-            self.language_family = self.parent.language_family
+            return language_family = self.parent.language_family
 
-    def create_events(self):
+    def compare_language(self, language2):
+        '''
+        TODO tweak magic numbers
+        '''
+        difference = 0.0
+        phonetic_inv_mod = 50 * self.calculate_phonetic_inventory_mod(language2.phonetic_inventory)
+        word_order_mod = 10 * self.calculate_word_order_mod(language2.word_order)
+        grammar_mod = self.calculate_grammar_mod(language2.grammar)
+        script_mod = self.calculate_script_mod(language2.script, language2.script_type)
+        word_bag_mod = self.calculate_word_bag_mod(language2.word_bag)
+
+        difference += phonetic_inv_mod
+        difference += word_order_mod
+        difference += grammar_mod
+        difference += script_mod
+        difference += word_bag_mod
+
+        logger.info("phonetic inventory contributed %d  to the total difference" % phonetic_inv_mod)
+        logger.info("word order contributed %d  to the total difference" % word_order_mod)
+        logger.info("grammar contributed %d  to the total difference" % grammar_mod)
+        logger.info("script contributed %d  to the total difference" % script_mod)
+        logger.info("word bag contributed %d  to the total difference" % word_bag_mod)
+        logger.info("total difference is %d" % difference)
+
+        return difference
+
+    def calculate_phonetic_inventory_mod(self, pi2):
+        match = 0
+        for phoneme in pi2:
+            if phoneme in self.phonetic_inventory:
+                match += 1
+            denominator += 1
+        for phoneme in self.phonetic_inventory:
+            if phoneme in pi2: 
+                match += 1
+            denominator += 1
+        return match / denominator
+
+    def calculate_word_order_mod(self, wo2):
+        if self.word_order == wo2 return 1.0
+        if self.word_order or wo2 == "UNF" return 0.4
+        wo1 = list(self.word_order)
+        wo2 = list(wo2)
+        match = 0
+        for i in range(2):
+            if wo1[i] == wo2[i]:
+                match += 1
+        return match / 3
+
+    def calculate_grammar_mod(self, gr2):
+        return 0
+
+    def create_events(self, override_value):
         '''
         TODO
         '''
