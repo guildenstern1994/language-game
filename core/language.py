@@ -147,6 +147,7 @@ class Language(object):
     def map_phonemes_to_graphemes(self):
         '''
         TODO tweak magic number, support other script types
+        #TODO reverse map
         '''
         seed1 = random.uniform(0,1)
         if self.script_type == "alphabet":
@@ -228,11 +229,11 @@ class Language(object):
         TODO tweak magic numbers
         '''
         difference = 0.0
-        phonetic_inv_mod = 50 * self.calculate_phonetic_inventory_mod(language2.phonetic_inventory)
+        phonetic_inv_mod = 35 * self.calculate_phonetic_inventory_mod(language2.phonetic_inventory)
         word_order_mod = 10 * self.calculate_word_order_mod(language2.word_order)
         grammar_mod = self.calculate_grammar_mod(language2.grammar)
-        script_mod = self.calculate_script_mod(language2.script, language2.script_type)
-        word_bag_mod = self.calculate_word_bag_mod(language2.word_bag)
+        script_mod = 5 * self.calculate_script_mod(language2.script, language2.script_type)
+        word_bag_mod = 50 * self.calculate_word_bag_mod(language2.word_bag)
 
         difference += phonetic_inv_mod
         difference += word_order_mod
@@ -274,6 +275,34 @@ class Language(object):
 
     def calculate_grammar_mod(self, gr2):
         return 0
+
+    def calculate_word_bag_mod(self, wb2):
+        count = 0
+        for word in self.word_bag:
+            if word in wb2: #TODO test rigorously, not sure this works with a complex equality function
+                count += 1
+        for word2 in wb2:
+            if word2 in self.word_bag:
+                count += 1
+        denominator = len(wb2) + len(self.word_bag)
+        return float(count) / float(denominator)
+
+    def calculate_script_mod(self, sc2, stype2):
+        '''
+        TODO: Support for cross-type comparisons
+        TODO improve calculation
+        '''
+        if language.script_type != stype2 return 0.0
+        count = 0
+        for char in self.script:
+            if char in sc2:
+                count += 1
+        for char in sc2:
+            if char in self.script:
+                count += 1
+        denominator = len(sc2) + len(self.script)
+        return float(count) / float(denominator)
+
 
     def create_events(self, override_value):
         '''
