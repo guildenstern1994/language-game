@@ -10,7 +10,9 @@ Example: English
 
 import json
 import random
+import logging
 from libs.utils import IPA, ALPHABETS
+logger = logging.getLogger(__name__)
 
 
 class Language(object):
@@ -302,6 +304,38 @@ class Language(object):
                 count += 1
         denominator = len(sc2) + len(self.script)
         return float(count) / float(denominator)
+
+    def generate_word(mode="default"):
+        '''
+        Support other script types
+        write generate_meaning
+        returns 
+
+        '''
+        if mode == "default":
+            cur_phoneme = '^'
+            phoneme_array = []
+            done = False
+            while not done:
+                cur_phoneme = random.choice(self.phonetic_probs[cur_phoneme])
+                if cur_phoneme == "\0":
+                    break
+                phoneme_array.append(cur_phoneme)
+        if self.script_type == "alphabet":
+            written_form = ""
+            for phoneme in phoneme_array:
+                written_form += self.phoneme_to_grapheme_map[phoneme]
+        meaning = self.generate_meaning()
+        return {"phonemes": phoneme_array, "written_form": written_form, "meaning" = meaning}
+
+
+    def generate_meaning():
+        '''
+        TODO
+        '''
+        return None
+
+
 
 
     def create_events(self, override_value):
