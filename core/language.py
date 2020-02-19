@@ -11,7 +11,7 @@ Example: English
 import json
 import random
 import logging
-from libs.utils import IPA, ALPHABETS
+from libs.core_utils import IPA, ALPHABETS
 logger = logging.getLogger(__name__)
 
 
@@ -20,7 +20,7 @@ class Language(object):
     TODO: more grammar features
     '''
     def __init__(self, name, parent, nodes=[], idioms={}, word_bag={}, dialects=None, 
-        phonetic_inventory=None, phonetic_probs=None word_order=None, grammar=None, 
+        phonetic_inventory=None, phonetic_probs=None, word_order=None, grammar=None, 
         script=None, script_type="alphabet", language_family=None, events=None, event_log=None):
         '''
         Parameters:
@@ -51,7 +51,7 @@ class Language(object):
         '''
         TODO tweak magic number
         '''
-        if override_value is not None return override_value
+        if override_value is not None: return override_value
         phonetic_inventory = random.sample(IPA.keys(), 35)
         phonetic_inventory.append('\0')
         return phonetic_inventory
@@ -61,13 +61,13 @@ class Language(object):
     def create_phonetic_probs(self, override_value):
         '''
         '''
-        if override_value is not None return override_value
+        if override_value is not None: return override_value
         num_phonemes = len(self.phonetic_inventory)
         probs = {}
         for i in range(num_phonemes):
             phoneme = self.phonetic_inventory[i]
             probs = self.set_prob_for_phoneme(num_phonemes, probs, phoneme)
-        probs = self.set_prob_for_phoneme('^')
+        probs = self.set_prob_for_phoneme(num_phonemes, probs, '^')
         return probs
 
     def set_prob_for_phoneme(self, num_phonemes, probs, phoneme1):
@@ -84,32 +84,32 @@ class Language(object):
             probs[phoneme1][phoneme2] = r
             prob_sum += r
         for phoneme2 in probs[phoneme1].keys():
-            probs[phoneme1][phoneme2] = float(probs[phoneme][phoneme2]) / float(prob_sum)
+            probs[phoneme1][phoneme2] = float(probs[phoneme1][phoneme2]) / float(prob_sum)
         return probs
 
 
 
     def create_word_order(self, override_value, word_orders=['SOV', 'SVO', 'VSO', 
-        'VOS', 'OVS', 'OSV', 'UNF']order_weights=[.41, .354, .069, .018, .008, .003, .137]):
+        'VOS', 'OVS', 'OSV', 'UNF'], order_weights=[.41, .354, .069, .018, .008, .003, .137]):
         '''
         Default order_weights correspond to distribution of real-world languages
         '''
-        if override_value is not None return override_value
+        if override_value is not None: return override_value
         return random.choices(word_orders, order_weights, k=1)
 
     def create_grammar(self, override_value):
         '''
         TODO?
         '''
-        if override_value is not None return override_value
+        if override_value is not None: return override_value
         return None
 
-    def create_script(self, override_value, script_type mode="standard", size=None):
+    def create_script(self, override_value, script_type, mode="standard", size=None):
         '''
         TODO add other character types and selection modes
         '''
-        if override_value is not None return override_value
-        if script_type = "no_script":
+        if override_value is not None: return override_value
+        if script_type == "no_script":
             self.script_type = "no_script"
             return []
         character_set = self.choose_character_set(mode)
@@ -131,7 +131,7 @@ class Language(object):
             elif character_set.type == "logograph":
                 #TODO
                 pass
-            elif character_set.type == "syllabary"
+            elif character_set.type == "syllabary":
                 #TODO
                 pass
 
@@ -209,7 +209,7 @@ class Language(object):
             grapheme += random.choice(used+unused)
             grapheme+= random.choice(used+unused)
         if grapheme in unused:
-            unused.del(grapheme)
+            unused.delete(grapheme)
         elif grapheme not in uused:
             used.append(grapheme)
         return grapheme, used, unused
@@ -220,11 +220,11 @@ class Language(object):
         '''
         TODO implement dynamic update for the discovery of language families
         '''
-        if override_value is not None return override_value
+        if override_value is not None: return override_value
         if self.parent is None:
-            return language_family = self.name
+            return self.name
         else:
-            return language_family = self.parent.language_family
+            return self.parent.language_family
 
     def compare_language(self, language2):
         '''
@@ -265,8 +265,8 @@ class Language(object):
         return match / denominator
 
     def calculate_word_order_mod(self, wo2):
-        if self.word_order == wo2 return 1.0
-        if self.word_order or wo2 == "UNF" return 0.4
+        if self.word_order == wo2: return 1.0
+        if self.word_order == "UNF" or wo2 == "UNF": return 0.4
         wo1 = list(self.word_order)
         wo2 = list(wo2)
         match = 0
@@ -294,7 +294,7 @@ class Language(object):
         TODO: Support for cross-type comparisons
         TODO improve calculation
         '''
-        if language.script_type != stype2 return 0.0
+        if language.script_type != stype2: return 0.0
         count = 0
         for char in self.script:
             if char in sc2:
@@ -326,7 +326,7 @@ class Language(object):
             for phoneme in phoneme_array:
                 written_form += self.phoneme_to_grapheme_map[phoneme]
         meaning = self.generate_meaning()
-        return {"phonemes": phoneme_array, "written_form": written_form, "meaning" = meaning}
+        return {"phonemes": phoneme_array, "written_form": written_form, "meaning": meaning}
 
 
     def generate_meaning():
