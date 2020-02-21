@@ -4,5 +4,4 @@ setup:
 	pip install -U -e .
 test:
 	cd tests && pwd && \
-	python language_object_tests.py
-	python *.py
+	python -m unittest discover -s ./ -p '*.py'

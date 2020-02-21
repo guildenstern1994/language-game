@@ -53,7 +53,8 @@ class Language(object):
         '''
         if override_value is not None: return override_value
         phonetic_inventory = random.sample(IPA.keys(), 35)
-        phonetic_inventory.append('\0')
+        if 506 not in phonetic_inventory:
+            phonetic_inventory.append(506)
         return phonetic_inventory
 
 
@@ -107,6 +108,7 @@ class Language(object):
     def create_script(self, override_value, script_type, mode="standard", size=None):
         '''
         TODO add other character types and selection modes
+        TODO tweak size
         '''
         if override_value is not None: return override_value
         if script_type == "no_script":
@@ -114,7 +116,8 @@ class Language(object):
             return []
         character_set = self.choose_character_set(mode)
         if size is None:
-            size = random.choice(range(20,40))
+            size = random.choice(range(20,26))
+            size = min(size, len(character_set.chars))
         if mode == "standard":
             if character_set.type == "abjad":
                 #TODO
@@ -139,12 +142,18 @@ class Language(object):
     def choose_character_set(self, mode="standard"):
         '''
         TODO other selection modes
+        TODO other script types
         '''
         if mode == "standard" or "historic":
-            return random.choice(ALPHABETS)
+            keys = list(ALPHABETS.keys())
+            key = random.choice(keys)
+            letters = ALPHABETS[key]
         elif mode == "mix":
             #TODO
             pass
+        cset = CharacterSet(letters, "alphabet")
+        return cset
+
 
     def map_phonemes_to_graphemes(self):
         '''
@@ -173,18 +182,22 @@ class Language(object):
                         prob2 = prob2 / prob_sum
                         self.phoneme_to_grapheme_map[phoneme] = {grapheme1: prob1, grapheme2: prob2}
                 else:
-                    grapheme1 = self.pick_grapheme(used, unused)
-                    grapheme2 = self.pick_grapheme(used, unused)
-                    grapheme3 = self.pick_grapheme(used, unused)
+                    grapheme1, used, unused = self.pick_grapheme(used, unused)
+                    grapheme2, used, unused = self.pick_grapheme(used, unused)
+                    grapheme3, used, unused = self.pick_grapheme(used, unused)
                     used_graphemes = []
                     prob_sum = 0.0
+                    self.phoneme_to_grapheme_map[phoneme] = {}
                     for grapheme in [grapheme1, grapheme2, grapheme3]:
                         if grapheme not in used_graphemes:
                             prob = random.uniform(0,1)
-                            self.phoneme_to_grapheme_map[phoneme] = {grapheme: prob}
+                            # print("G: ",grapheme, " ", type(grapheme))
+                            # print("PH: ", type(prob))
+                            # print("PR: ", type(phoneme))
+                            self.phoneme_to_grapheme_map[phoneme][grapheme] = prob
                             prob_sum += prob
                     for key in self.phoneme_to_grapheme_map[phoneme].keys():
-                        self.phoneme_to_grapheme_map[key] = self.phoneme_to_grapheme_map[key] / prob_sum
+                        self.phoneme_to_grapheme_map[phoneme][key] = self.phoneme_to_grapheme_map[phoneme][key] / prob_sum
                 
 
 
@@ -197,7 +210,7 @@ class Language(object):
         seed1 = random.uniform(0,1)
         seed2 = random.uniform(0,1)
         if seed1 < .9:
-            if seed2 < .8:
+            if (seed2 < .8 or len(used) == 0) and len(unused) > 0:
                 grapheme = random.choice(unused)
             else:
                 grapheme = random.choice(used)
@@ -209,8 +222,8 @@ class Language(object):
             grapheme += random.choice(used+unused)
             grapheme+= random.choice(used+unused)
         if grapheme in unused:
-            unused.delete(grapheme)
-        elif grapheme not in uused:
+            unused.remove(grapheme)
+        if grapheme not in used:
             used.append(grapheme)
         return grapheme, used, unused
 
@@ -318,7 +331,8 @@ class Language(object):
             done = False
             while not done:
                 cur_phoneme = random.choice(self.phonetic_probs[cur_phoneme])
-                if cur_phoneme == "\0":
+                print(cur_phoneme)
+                if cur_phoneme == 506:
                     break
                 phoneme_array.append(cur_phoneme)
         if self.script_type == "alphabet":
@@ -345,5 +359,9 @@ class Language(object):
         pass
 
 
+class CharacterSet(object):
 
+    def __init__(self, letters, script_type):
+        self.chars = letters
+        self.type = script_type
 

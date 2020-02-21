@@ -1,4 +1,5 @@
 from libs.ipaBook import ipa_book
+from libs.alphabetBook import alphabet_book
 
 def read_ipa_book():
     ipa = dict()
@@ -8,10 +9,8 @@ def read_ipa_book():
 
 
 def read_alphabets():
-    '''
-    TODO
-    '''
-    pass
+    return alphabet_book
+
 
 IPA = read_ipa_book()
 ALPHABETS = read_alphabets()

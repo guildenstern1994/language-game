@@ -513,15 +513,15 @@ ipa_book = [
     "Status": "",
     "Character": "ʟ"
   },
-  {
-    "IPA Number": 159,
-    "IPA Name": "Hooktop P",
-    "USV": "01A5",
-    "Unicode Name": "LATIN SMALL LETTER P WITH HOOK",
-    "IPA Description": "Voiceless bilabial implosive",
-    "Status": "Withdrawn (1993)",
-    "Character": "ƥ"
-  },
+  # {
+  #   "IPA Number": 159,
+  #   "IPA Name": "Hooktop P",
+  #   "USV": "01A5",
+  #   "Unicode Name": "LATIN SMALL LETTER P WITH HOOK",
+  #   "IPA Description": "Voiceless bilabial implosive",
+  #   "Status": "Withdrawn (1993)",
+  #   "Character": "ƥ"
+  # },
   {
     "IPA Number": 160,
     "IPA Name": "Hooktop B",
@@ -531,15 +531,15 @@ ipa_book = [
     "Status": "",
     "Character": "ɓ"
   },
-  {
-    "IPA Number": 161,
-    "IPA Name": "Hooktop T",
-    "USV": "01AD",
-    "Unicode Name": "LATIN SMALL LETTER T WITH HOOK",
-    "IPA Description": "Voiceless dental or alveolar implosive",
-    "Status": "Withdrawn (1993)",
-    "Character": "ƭ"
-  },
+  # {
+  #   "IPA Number": 161,
+  #   "IPA Name": "Hooktop T",
+  #   "USV": "01AD",
+  #   "Unicode Name": "LATIN SMALL LETTER T WITH HOOK",
+  #   "IPA Description": "Voiceless dental or alveolar implosive",
+  #   "Status": "Withdrawn (1993)",
+  #   "Character": "ƭ"
+  # },
   {
     "IPA Number": 162,
     "IPA Name": "Hooktop D",
@@ -549,15 +549,15 @@ ipa_book = [
     "Status": "",
     "Character": "ɗ"
   },
-  {
-    "IPA Number": 163,
-    "IPA Name": "Hooktop C",
-    "USV": "0188",
-    "Unicode Name": "LATIN SMALL LETTER C WITH HOOK",
-    "IPA Description": "Voiceless palatal implosive",
-    "Status": "Withdrawn (1993)",
-    "Character": "ƈ"
-  },
+  # {
+  #   "IPA Number": 163,
+  #   "IPA Name": "Hooktop C",
+  #   "USV": "0188",
+  #   "Unicode Name": "LATIN SMALL LETTER C WITH HOOK",
+  #   "IPA Description": "Voiceless palatal implosive",
+  #   "Status": "Withdrawn (1993)",
+  #   "Character": "ƈ"
+  # },
   {
     "IPA Number": 164,
     "IPA Name": "Hooktop barred dotless J",
@@ -585,15 +585,15 @@ ipa_book = [
     "Status": "",
     "Character": "ɠ"
   },
-  {
-    "IPA Number": 167,
-    "IPA Name": "Hooktop Q",
-    "USV": "02A0",
-    "Unicode Name": "LATIN SMALL LETTER Q WITH HOOK",
-    "IPA Description": "Voiceless uvular implosive",
-    "Status": "Withdrawn (1993)",
-    "Character": "ʠ"
-  },
+  # {
+  #   "IPA Number": 167,
+  #   "IPA Name": "Hooktop Q",
+  #   "USV": "02A0",
+  #   "Unicode Name": "LATIN SMALL LETTER Q WITH HOOK",
+  #   "IPA Description": "Voiceless uvular implosive",
+  #   "Status": "Withdrawn (1993)",
+  #   "Character": "ʠ"
+  # },
   {
     "IPA Number": 168,
     "IPA Name": "Hooktop small capital G",
@@ -747,78 +747,78 @@ ipa_book = [
     "Status": "",
     "Character": "ⱱ"
   },
-  {
-    "IPA Number": 201,
-    "IPA Name": "Turned T",
-    "USV": "0287",
-    "Unicode Name": "LATIN SMALL LETTER TURNED T",
-    "IPA Description": "Dental click",
-    "Status": "Superseded by 177 (1989)",
-    "Character": "ʇ"
-  },
-  {
-    "IPA Number": 202,
-    "IPA Name": "Stretched C",
-    "USV": "0297",
-    "Unicode Name": "LATIN LETTER STRETCHED C",
-    "IPA Description": "Postalveolar click",
-    "Status": "Superseded by 178 (1989)",
-    "Character": "ʗ"
-  },
-  {
-    "IPA Number": 203,
-    "IPA Name": "Inverted glottal stop",
-    "USV": "0296",
-    "Unicode Name": "LATIN LETTER INVERTED GLOTTAL STOP",
-    "IPA Description": "Alveolar lateral click",
-    "Status": "Superseded by 180 (1989)",
-    "Character": "ʖ"
-  },
-  {
-    "IPA Number": 204,
-    "IPA Name": "Curly-tail esh",
-    "USV": "0286",
-    "Unicode Name": "LATIN SMALL LETTER ESH WITH CURL",
-    "IPA Description": "",
-    "Status": "Withdrawn (1989)",
-    "Character": "ʆ"
-  },
-  {
-    "IPA Number": 205,
-    "IPA Name": "Curly-tail ezh",
-    "USV": "0293",
-    "Unicode Name": "LATIN SMALL LETTER EZH WITH CURL",
-    "IPA Description": "",
-    "Status": "Withdrawn (1989)",
-    "Character": "ʓ"
-  },
-  {
-    "IPA Number": 206,
-    "IPA Name": "Long-leg R",
-    "USV": "027C",
-    "Unicode Name": "LATIN SMALL LETTER R WITH LONG LEG",
-    "IPA Description": "",
-    "Status": "Withdrawn (1989)",
-    "Character": "ɼ"
-  },
-  {
-    "IPA Number": 207,
-    "IPA Name": "Superscript S",
-    "USV": "02E2",
-    "Unicode Name": "MODIFIER LETTER SMALL S",
-    "IPA Description": "",
-    "Status": "",
-    "Character": "ˢ"
-  },
-  {
-    "IPA Number": 208,
-    "IPA Name": "Left-hook T",
-    "USV": "01AB",
-    "Unicode Name": "LATIN SMALL LETTER T WITH PALATAL HOOK",
-    "IPA Description": "Palatalized Voiceless dental or alveolar plosive",
-    "Status": "Withdrawn (1989)",
-    "Character": "ƫ"
-  },
+  # {
+  #   "IPA Number": 201,
+  #   "IPA Name": "Turned T",
+  #   "USV": "0287",
+  #   "Unicode Name": "LATIN SMALL LETTER TURNED T",
+  #   "IPA Description": "Dental click",
+  #   "Status": "Superseded by 177 (1989)",
+  #   "Character": "ʇ"
+  # },
+  # {
+  #   "IPA Number": 202,
+  #   "IPA Name": "Stretched C",
+  #   "USV": "0297",
+  #   "Unicode Name": "LATIN LETTER STRETCHED C",
+  #   "IPA Description": "Postalveolar click",
+  #   "Status": "Superseded by 178 (1989)",
+  #   "Character": "ʗ"
+  # },
+  # {
+  #   "IPA Number": 203,
+  #   "IPA Name": "Inverted glottal stop",
+  #   "USV": "0296",
+  #   "Unicode Name": "LATIN LETTER INVERTED GLOTTAL STOP",
+  #   "IPA Description": "Alveolar lateral click",
+  #   "Status": "Superseded by 180 (1989)",
+  #   "Character": "ʖ"
+  # },
+  # {
+  #   "IPA Number": 204,
+  #   "IPA Name": "Curly-tail esh",
+  #   "USV": "0286",
+  #   "Unicode Name": "LATIN SMALL LETTER ESH WITH CURL",
+  #   "IPA Description": "",
+  #   "Status": "Withdrawn (1989)",
+  #   "Character": "ʆ"
+  # },
+  # {
+  #   "IPA Number": 205,
+  #   "IPA Name": "Curly-tail ezh",
+  #   "USV": "0293",
+  #   "Unicode Name": "LATIN SMALL LETTER EZH WITH CURL",
+  #   "IPA Description": "",
+  #   "Status": "Withdrawn (1989)",
+  #   "Character": "ʓ"
+  # },
+  # {
+  #   "IPA Number": 206,
+  #   "IPA Name": "Long-leg R",
+  #   "USV": "027C",
+  #   "Unicode Name": "LATIN SMALL LETTER R WITH LONG LEG",
+  #   "IPA Description": "",
+  #   "Status": "Withdrawn (1989)",
+  #   "Character": "ɼ"
+  # },
+  # {
+  #   "IPA Number": 207,
+  #   "IPA Name": "Superscript S",
+  #   "USV": "02E2",
+  #   "Unicode Name": "MODIFIER LETTER SMALL S",
+  #   "IPA Description": "",
+  #   "Status": "",
+  #   "Character": "ˢ"
+  # },
+  # {
+  #   "IPA Number": 208,
+  #   "IPA Name": "Left-hook T",
+  #   "USV": "01AB",
+  #   "Unicode Name": "LATIN SMALL LETTER T WITH PALATAL HOOK",
+  #   "IPA Description": "Palatalized Voiceless dental or alveolar plosive",
+  #   "Status": "Withdrawn (1989)",
+  #   "Character": "ƫ"
+  # },
   {
     "IPA Number": 209,
     "IPA Name": "L with tilde",
@@ -837,60 +837,60 @@ ipa_book = [
     "Status": "Equivalent to 110",
     "Character": "g"
   },
-  {
-    "IPA Number": 211,
-    "IPA Name": "T-S ligature",
-    "USV": "02A6",
-    "Unicode Name": "LATIN SMALL LETTER TS DIGRAPH",
-    "IPA Description": "Voiceless dental or alveolar affricate",
-    "Status": "Superseded by 103 + 132",
-    "Character": "ʦ"
-  },
-  {
-    "IPA Number": 212,
-    "IPA Name": "D-Z ligature",
-    "USV": "02A3",
-    "Unicode Name": "LATIN SMALL LETTER DZ DIGRAPH",
-    "IPA Description": "Voiced alveolar affricate",
-    "Status": "Superseded by 104 + 133",
-    "Character": "ʣ"
-  },
-  {
-    "IPA Number": 213,
-    "IPA Name": "T-Esh ligature",
-    "USV": "02A7",
-    "Unicode Name": "LATIN SMALL LETTER TESH DIGRAPH",
-    "IPA Description": "Voiceless postalveolar affricate",
-    "Status": "Superseded by 103 + 134",
-    "Character": "ʧ"
-  },
-  {
-    "IPA Number": 214,
-    "IPA Name": "D-Ezh ligature",
-    "USV": "02A4",
-    "Unicode Name": "LATIN SMALL LETTER DEZH DIGRAPH",
-    "IPA Description": "Voiced postalveolar affricate",
-    "Status": "Superseded by 104 + 135",
-    "Character": "ʤ"
-  },
-  {
-    "IPA Number": 215,
-    "IPA Name": "T-Curly-tail-C ligature",
-    "USV": "02A8",
-    "Unicode Name": "LATIN SMALL LETTER TC DIGRAPH WITH CURL",
-    "IPA Description": "Voiceless alveolo-palatal affricate",
-    "Status": "Superseded by 103 + 182",
-    "Character": "ʨ"
-  },
-  {
-    "IPA Number": 216,
-    "IPA Name": "D-Curly-tail-Z ligature",
-    "USV": "02A5",
-    "Unicode Name": "LATIN SMALL LETTER DZ DIGRAPH WITH CURL",
-    "IPA Description": "Voiced alveolo-palatal affricate",
-    "Status": "Superseded by 104 + 183",
-    "Character": "ʥ"
-  },
+  # {
+  #   "IPA Number": 211,
+  #   "IPA Name": "T-S ligature",
+  #   "USV": "02A6",
+  #   "Unicode Name": "LATIN SMALL LETTER TS DIGRAPH",
+  #   "IPA Description": "Voiceless dental or alveolar affricate",
+  #   "Status": "Superseded by 103 + 132",
+  #   "Character": "ʦ"
+  # },
+  # {
+  #   "IPA Number": 212,
+  #   "IPA Name": "D-Z ligature",
+  #   "USV": "02A3",
+  #   "Unicode Name": "LATIN SMALL LETTER DZ DIGRAPH",
+  #   "IPA Description": "Voiced alveolar affricate",
+  #   "Status": "Superseded by 104 + 133",
+  #   "Character": "ʣ"
+  # },
+  # {
+  #   "IPA Number": 213,
+  #   "IPA Name": "T-Esh ligature",
+  #   "USV": "02A7",
+  #   "Unicode Name": "LATIN SMALL LETTER TESH DIGRAPH",
+  #   "IPA Description": "Voiceless postalveolar affricate",
+  #   "Status": "Superseded by 103 + 134",
+  #   "Character": "ʧ"
+  # },
+  # {
+  #   "IPA Number": 214,
+  #   "IPA Name": "D-Ezh ligature",
+  #   "USV": "02A4",
+  #   "Unicode Name": "LATIN SMALL LETTER DEZH DIGRAPH",
+  #   "IPA Description": "Voiced postalveolar affricate",
+  #   "Status": "Superseded by 104 + 135",
+  #   "Character": "ʤ"
+  # },
+  # {
+  #   "IPA Number": 215,
+  #   "IPA Name": "T-Curly-tail-C ligature",
+  #   "USV": "02A8",
+  #   "Unicode Name": "LATIN SMALL LETTER TC DIGRAPH WITH CURL",
+  #   "IPA Description": "Voiceless alveolo-palatal affricate",
+  #   "Status": "Superseded by 103 + 182",
+  #   "Character": "ʨ"
+  # },
+  # {
+  #   "IPA Number": 216,
+  #   "IPA Name": "D-Curly-tail-Z ligature",
+  #   "USV": "02A5",
+  #   "Unicode Name": "LATIN SMALL LETTER DZ DIGRAPH WITH CURL",
+  #   "IPA Description": "Voiced alveolo-palatal affricate",
+  #   "Status": "Superseded by 104 + 183",
+  #   "Character": "ʥ"
+  # },
   {
     "IPA Number": 217,
     "IPA Name": "Superscript theta",
@@ -918,24 +918,24 @@ ipa_book = [
     "Status": "Not explicitly IPA approved",
     "Character": "ᶑ"
   },
-  {
-    "IPA Number": 290,
-    "IPA Name": "Barred two",
-    "USV": "01BB",
-    "Unicode Name": "LATIN LETTER TWO WITH STROKE",
-    "IPA Description": "",
-    "Status": "Withdrawn (1976)",
-    "Character": "ƻ"
-  },
-  {
-    "IPA Number": 291,
-    "IPA Name": "Turned K",
-    "USV": "029E",
-    "Unicode Name": "LATIN SMALL LETTER TURNED K",
-    "IPA Description": "",
-    "Status": "Withdrawn (1979)",
-    "Character": "ʞ"
-  },
+  # {
+  #   "IPA Number": 290,
+  #   "IPA Name": "Barred two",
+  #   "USV": "01BB",
+  #   "Unicode Name": "LATIN LETTER TWO WITH STROKE",
+  #   "IPA Description": "",
+  #   "Status": "Withdrawn (1976)",
+  #   "Character": "ƻ"
+  # },
+  # {
+  #   "IPA Number": 291,
+  #   "IPA Name": "Turned K",
+  #   "USV": "029E",
+  #   "Unicode Name": "LATIN SMALL LETTER TURNED K",
+  #   "IPA Description": "",
+  #   "Status": "Withdrawn (1979)",
+  #   "Character": "ʞ"
+  # },
   {
     "IPA Number": 292,
     "IPA Name": "Superscript X",
@@ -945,69 +945,69 @@ ipa_book = [
     "Status": "",
     "Character": "ˣ"
   },
-  {
-    "IPA Number": 293,
-    "IPA Name": "N, right leg",
-    "USV": "019E",
-    "Unicode Name": "LATIN SMALL LETTER N WITH LONG RIGHT LEG",
-    "IPA Description": "Syllabic nasal",
-    "Status": "Withdrawn (1976)",
-    "Character": "ƞ"
-  },
-  {
-    "IPA Number": 294,
-    "IPA Name": "Barred lambda",
-    "USV": "019B",
-    "Unicode Name": "LATIN SMALL LETTER LAMBDA WITH STROKE",
-    "IPA Description": "Voiceless dental or alveolar lateral affricate",
-    "Status": "Not IPA usage",
-    "Character": "ƛ"
-  },
-  {
-    "IPA Number": 295,
-    "IPA Name": "Lambda",
-    "USV": "03BB",
-    "Unicode Name": "GREEK SMALL LETTER LAMDA",
-    "IPA Description": "Voiceless dental or alveolar lateral fricative",
-    "Status": "Not IPA usage",
-    "Character": "λ"
-  },
-  {
-    "IPA Number": 296,
-    "IPA Name": "Z wedge",
-    "USV": "017E",
-    "Unicode Name": "LATIN SMALL LETTER Z WITH CARON",
-    "IPA Description": "Voiced postalveolar fricative",
-    "Status": "Not IPA usage",
-    "Character": "ž"
-  },
-  {
-    "IPA Number": 297,
-    "IPA Name": "S wedge",
-    "USV": "0161",
-    "Unicode Name": "LATIN SMALL LETTER S WITH CARON",
-    "IPA Description": "Voiceless postalveolar fricative",
-    "Status": "Not IPA usage",
-    "Character": "š"
-  },
-  {
-    "IPA Number": 298,
-    "IPA Name": "J wedge",
-    "USV": "01F0",
-    "Unicode Name": "LATIN SMALL LETTER J WITH CARON",
-    "IPA Description": "Voiced postalveolar affricate",
-    "Status": "Not IPA usage",
-    "Character": "ǰ"
-  },
-  {
-    "IPA Number": 299,
-    "IPA Name": "C wedge",
-    "USV": "010D",
-    "Unicode Name": "LATIN SMALL LETTER C WITH CARON",
-    "IPA Description": "Voiceless postalveolar affricate",
-    "Status": "Not IPA usage",
-    "Character": "č"
-  },
+  # {
+  #   "IPA Number": 293,
+  #   "IPA Name": "N, right leg",
+  #   "USV": "019E",
+  #   "Unicode Name": "LATIN SMALL LETTER N WITH LONG RIGHT LEG",
+  #   "IPA Description": "Syllabic nasal",
+  #   "Status": "Withdrawn (1976)",
+  #   "Character": "ƞ"
+  # },
+  # {
+  #   "IPA Number": 294,
+  #   "IPA Name": "Barred lambda",
+  #   "USV": "019B",
+  #   "Unicode Name": "LATIN SMALL LETTER LAMBDA WITH STROKE",
+  #   "IPA Description": "Voiceless dental or alveolar lateral affricate",
+  #   "Status": "Not IPA usage",
+  #   "Character": "ƛ"
+  # },
+  # {
+  #   "IPA Number": 295,
+  #   "IPA Name": "Lambda",
+  #   "USV": "03BB",
+  #   "Unicode Name": "GREEK SMALL LETTER LAMDA",
+  #   "IPA Description": "Voiceless dental or alveolar lateral fricative",
+  #   "Status": "Not IPA usage",
+  #   "Character": "λ"
+  # },
+  # {
+  #   "IPA Number": 296,
+  #   "IPA Name": "Z wedge",
+  #   "USV": "017E",
+  #   "Unicode Name": "LATIN SMALL LETTER Z WITH CARON",
+  #   "IPA Description": "Voiced postalveolar fricative",
+  #   "Status": "Not IPA usage",
+  #   "Character": "ž"
+  # },
+  # {
+  #   "IPA Number": 297,
+  #   "IPA Name": "S wedge",
+  #   "USV": "0161",
+  #   "Unicode Name": "LATIN SMALL LETTER S WITH CARON",
+  #   "IPA Description": "Voiceless postalveolar fricative",
+  #   "Status": "Not IPA usage",
+  #   "Character": "š"
+  # },
+  # {
+  #   "IPA Number": 298,
+  #   "IPA Name": "J wedge",
+  #   "USV": "01F0",
+  #   "Unicode Name": "LATIN SMALL LETTER J WITH CARON",
+  #   "IPA Description": "Voiced postalveolar affricate",
+  #   "Status": "Not IPA usage",
+  #   "Character": "ǰ"
+  # },
+  # {
+  #   "IPA Number": 299,
+  #   "IPA Name": "C wedge",
+  #   "USV": "010D",
+  #   "Unicode Name": "LATIN SMALL LETTER C WITH CARON",
+  #   "IPA Description": "Voiceless postalveolar affricate",
+  #   "Status": "Not IPA usage",
+  #   "Character": "č"
+  # },
   {
     "IPA Number": 301,
     "IPA Name": "Lower-case I",
@@ -1251,15 +1251,15 @@ ipa_book = [
     "Status": "Equivalent to 322 + 419",
     "Character": "ɚ"
   },
-  {
-    "IPA Number": 394,
-    "IPA Name": "Undotted I",
-    "USV": "0131",
-    "Unicode Name": "LATIN SMALL LETTER DOTLESS I",
-    "IPA Description": "",
-    "Status": "Not IPA usage",
-    "Character": "ı"
-  },
+  # {
+  #   "IPA Number": 394,
+  #   "IPA Name": "Undotted I",
+  #   "USV": "0131",
+  #   "Unicode Name": "LATIN SMALL LETTER DOTLESS I",
+  #   "IPA Description": "",
+  #   "Status": "Not IPA usage",
+  #   "Character": "ı"
+  # },
   {
     "IPA Number": 395,
     "IPA Name": "Closed reversed epsilon",
@@ -1269,15 +1269,15 @@ ipa_book = [
     "Status": "",
     "Character": "ɞ"
   },
-  {
-    "IPA Number": 396,
-    "IPA Name": "Closed epsilon",
-    "USV": "029A",
-    "Unicode Name": "LATIN SMALL LETTER CLOSED OPEN E",
-    "IPA Description": "Open-mid central rounded vowel",
-    "Status": "Superseded by 395 (1996)",
-    "Character": "ʚ"
-  },
+  # {
+  #   "IPA Number": 396,
+  #   "IPA Name": "Closed epsilon",
+  #   "USV": "029A",
+  #   "Unicode Name": "LATIN SMALL LETTER CLOSED OPEN E",
+  #   "IPA Description": "Open-mid central rounded vowel",
+  #   "Status": "Superseded by 395 (1996)",
+  #   "Character": "ʚ"
+  # },
   {
     "IPA Number": 397,
     "IPA Name": "Reversed E",
@@ -1287,501 +1287,501 @@ ipa_book = [
     "Status": "",
     "Character": "ɘ"
   },
-  {
-    "IPA Number": 398,
-    "IPA Name": "Closed omega",
-    "USV": "0277",
-    "Unicode Name": "LATIN SMALL LETTER CLOSED OMEGA",
-    "IPA Description": "Near-close near-back rounded vowel",
-    "Status": "Superseded by 321 (1989)",
-    "Character": "ɷ"
-  },
-  {
-    "IPA Number": 399,
-    "IPA Name": "Iota",
-    "USV": "0269",
-    "Unicode Name": "LATIN SMALL LETTER IOTA",
-    "IPA Description": "Near-close near-front unrounded vowel",
-    "Status": "Superseded by 319 (1989)",
-    "Character": "ɩ"
-  },
-  {
-    "IPA Number": 401,
-    "IPA Name": "Apostrophe",
-    "USV": "02BC",
-    "Unicode Name": "MODIFIER LETTER APOSTROPHE",
-    "IPA Description": "Ejective",
-    "Status": "",
-    "Character": "ʼ"
-  },
-  {
-    "IPA Number": "402.1",
-    "IPA Name": "Under-ring",
-    "USV": "0325",
-    "Unicode Name": "COMBINING RING BELOW",
-    "IPA Description": "Voiceless",
-    "Status": "",
-    "Character": "̥"
-  },
-  {
-    "IPA Number": "402.2",
-    "IPA Name": "Over-ring",
-    "USV": "030A",
-    "Unicode Name": "COMBINING RING ABOVE",
-    "IPA Description": "Voiceless (use if character has descender)",
-    "Status": "",
-    "Character": "̊"
-  },
-  {
-    "IPA Number": 403,
-    "IPA Name": "Subscript wedge",
-    "USV": "032C",
-    "Unicode Name": "COMBINING CARON BELOW",
-    "IPA Description": "Voiced",
-    "Status": "(=663, 664)",
-    "Character": "̬"
-  },
-  {
-    "IPA Number": "404, 671",
-    "IPA Name": "Superscript H, Left-sited superscript H",
-    "USV": "02B0",
-    "Unicode Name": "MODIFIER LETTER SMALL H",
-    "IPA Description": "Pre-aspiration",
-    "Status": "(use 404)",
-    "Character": "ʰ"
-  },
-  {
-    "IPA Number": 405,
-    "IPA Name": "Subscript umlaut",
-    "USV": "0324",
-    "Unicode Name": "COMBINING DIAERESIS BELOW",
-    "IPA Description": "Breathy voiced",
-    "Status": "",
-    "Character": "̤"
-  },
-  {
-    "IPA Number": 406,
-    "IPA Name": "Subscript tilde",
-    "USV": "0330",
-    "Unicode Name": "COMBINING TILDE BELOW",
-    "IPA Description": "Creaky voiced",
-    "Status": "",
-    "Character": "̰"
-  },
-  {
-    "IPA Number": 407,
-    "IPA Name": "Subscript seagull",
-    "USV": "033C",
-    "Unicode Name": "COMBINING SEAGULL BELOW",
-    "IPA Description": "Linguolabial",
-    "Status": "",
-    "Character": "̼"
-  },
-  {
-    "IPA Number": 408,
-    "IPA Name": "Subscript bridge",
-    "USV": "032A",
-    "Unicode Name": "COMBINING BRIDGE BELOW",
-    "IPA Description": "Dental",
-    "Status": "",
-    "Character": "̪"
-  },
-  {
-    "IPA Number": 409,
-    "IPA Name": "Inverted subscript bridge",
-    "USV": "033A",
-    "Unicode Name": "COMBINING INVERTED BRIDGE BELOW",
-    "IPA Description": "Apical",
-    "Status": "",
-    "Character": "̺"
-  },
-  {
-    "IPA Number": 410,
-    "IPA Name": "Subscript square",
-    "USV": "033B",
-    "Unicode Name": "COMBINING SQUARE BELOW",
-    "IPA Description": "Laminal",
-    "Status": "",
-    "Character": "̻"
-  },
-  {
-    "IPA Number": 411,
-    "IPA Name": "Subscript right half-ring",
-    "USV": "0339",
-    "Unicode Name": "COMBINING RIGHT HALF RING BELOW",
-    "IPA Description": "More rounded",
-    "Status": "",
-    "Character": "̹"
-  },
-  {
-    "IPA Number": 412,
-    "IPA Name": "Subscript left half-ring",
-    "USV": "031C",
-    "Unicode Name": "COMBINING LEFT HALF RING BELOW",
-    "IPA Description": "Less rounded",
-    "Status": "",
-    "Character": "̜"
-  },
-  {
-    "IPA Number": 413,
-    "IPA Name": "Subscript plus",
-    "USV": "031F",
-    "Unicode Name": "COMBINING PLUS SIGN BELOW",
-    "IPA Description": "Advanced",
-    "Status": "",
-    "Character": "̟"
-  },
-  {
-    "IPA Number": 414,
-    "IPA Name": "Under-bar",
-    "USV": "0320",
-    "Unicode Name": "COMBINING MINUS SIGN BELOW",
-    "IPA Description": "Retracted",
-    "Status": "",
-    "Character": "̠"
-  },
-  {
-    "IPA Number": 415,
-    "IPA Name": "Umlaut",
-    "USV": "0308",
-    "Unicode Name": "COMBINING DIAERESIS",
-    "IPA Description": "Centralized",
-    "Status": "",
-    "Character": "̈"
-  },
-  {
-    "IPA Number": 416,
-    "IPA Name": "Over-cross",
-    "USV": "033D",
-    "Unicode Name": "COMBINING X ABOVE",
-    "IPA Description": "Mid-centralized",
-    "Status": "",
-    "Character": "̽"
-  },
-  {
-    "IPA Number": 417,
-    "IPA Name": "Advancing sign",
-    "USV": "0318",
-    "Unicode Name": "COMBINING LEFT TACK BELOW",
-    "IPA Description": "Advanced tongue root",
-    "Status": "",
-    "Character": "̘"
-  },
-  {
-    "IPA Number": 418,
-    "IPA Name": "Retracting sign",
-    "USV": "0319",
-    "Unicode Name": "COMBINING RIGHT TACK BELOW",
-    "IPA Description": "Retracted tongue root",
-    "Status": "",
-    "Character": "̙"
-  },
-  {
-    "IPA Number": 419,
-    "IPA Name": "Right Hook",
-    "USV": "02DE",
-    "Unicode Name": "MODIFIER LETTER RHOTIC HOOK",
-    "IPA Description": "Rhoticity",
-    "Status": "Unicode: use precomposed characters - see note 1",
-    "Character": "˞"
-  },
-  {
-    "IPA Number": 420,
-    "IPA Name": "Superscript W",
-    "USV": "02B7",
-    "Unicode Name": "MODIFIER LETTER SMALL W",
-    "IPA Description": "Labialized",
-    "Status": "",
-    "Character": "ʷ"
-  },
-  {
-    "IPA Number": 421,
-    "IPA Name": "Superscript J",
-    "USV": "02B2",
-    "Unicode Name": "MODIFIER LETTER SMALL J",
-    "IPA Description": "Palatalized",
-    "Status": "",
-    "Character": "ʲ"
-  },
-  {
-    "IPA Number": 422,
-    "IPA Name": "Superscript gamma",
-    "USV": "02E0",
-    "Unicode Name": "MODIFIER LETTER SMALL GAMMA",
-    "IPA Description": "Velarized",
-    "Status": "",
-    "Character": "ˠ"
-  },
-  {
-    "IPA Number": 423,
-    "IPA Name": "Superscript reversed glottal stop",
-    "USV": "02E4",
-    "Unicode Name": "MODIFIER LETTER SMALL REVERSED GLOTTAL STOP",
-    "IPA Description": "Pharyngealized",
-    "Status": "",
-    "Character": "ˤ"
-  },
-  {
-    "IPA Number": 424,
-    "IPA Name": "Superscript tilde",
-    "USV": "0303",
-    "Unicode Name": "COMBINING TILDE",
-    "IPA Description": "Nasalized",
-    "Status": "",
-    "Character": "̃"
-  },
-  {
-    "IPA Number": 425,
-    "IPA Name": "Superscript N",
-    "USV": "207F",
-    "Unicode Name": "SUPERSCRIPT LATIN SMALL LETTER N",
-    "IPA Description": "Nasal release",
-    "Status": "",
-    "Character": "ⁿ"
-  },
-  {
-    "IPA Number": 426,
-    "IPA Name": "Superscript L",
-    "USV": "02E1",
-    "Unicode Name": "MODIFIER LETTER SMALL L",
-    "IPA Description": "Lateral release",
-    "Status": "",
-    "Character": "ˡ"
-  },
-  {
-    "IPA Number": 427,
-    "IPA Name": "Corner",
-    "USV": "031A",
-    "Unicode Name": "COMBINING LEFT ANGLE ABOVE",
-    "IPA Description": "No audible release",
-    "Status": "",
-    "Character": "̚"
-  },
-  {
-    "IPA Number": 428,
-    "IPA Name": "Superimposed tilde",
-    "USV": "0334",
-    "Unicode Name": "COMBINING TILDE OVERLAY",
-    "IPA Description": "Velarized or pharyngealized",
-    "Status": "Unicode: use precomposed characters - see note 1",
-    "Character": "̴"
-  },
-  {
-    "IPA Number": "429.1",
-    "IPA Name": "Raising sign",
-    "USV": "031D",
-    "Unicode Name": "COMBINING UP TACK BELOW",
-    "IPA Description": "Raised",
-    "Status": "",
-    "Character": "̝"
-  },
-  {
-    "IPA Number": "429.2",
-    "IPA Name": "Raising sign",
-    "USV": "02D4",
-    "Unicode Name": "MODIFIER LETTER UP TACK",
-    "IPA Description": "Raised",
-    "Status": "",
-    "Character": "˔"
-  },
-  {
-    "IPA Number": "430.1",
-    "IPA Name": "Lowering sign",
-    "USV": "031E",
-    "Unicode Name": "COMBINING DOWN TACK BELOW",
-    "IPA Description": "Lowered",
-    "Status": "",
-    "Character": "̞"
-  },
-  {
-    "IPA Number": "430.2",
-    "IPA Name": "Lowering sign",
-    "USV": "02D5",
-    "Unicode Name": "MODIFIER LETTER DOWN TACK",
-    "IPA Description": "Lowered",
-    "Status": "",
-    "Character": "˕"
-  },
-  {
-    "IPA Number": 431,
-    "IPA Name": "Syllabicity mark",
-    "USV": "0329",
-    "Unicode Name": "COMBINING VERTICAL LINE BELOW",
-    "IPA Description": "Syllabic",
-    "Status": "",
-    "Character": "̩"
-  },
-  {
-    "IPA Number": 432,
-    "IPA Name": "Subscript arch",
-    "USV": "032F",
-    "Unicode Name": "COMBINING INVERTED BREVE BELOW",
-    "IPA Description": "Non-syllabic",
-    "Status": "",
-    "Character": "̯"
-  },
-  {
-    "IPA Number": "433.1",
-    "IPA Name": "Top tie bar",
-    "USV": "0361",
-    "Unicode Name": "COMBINING DOUBLE INVERTED BREVE",
-    "IPA Description": "Affricate or double articulation",
-    "Status": "",
-    "Character": "͡"
-  },
-  {
-    "IPA Number": "433.2",
-    "IPA Name": "Bottom tie bar",
-    "USV": "035C",
-    "Unicode Name": "COMBINING DOUBLE BREVE BELOW",
-    "IPA Description": "Affricate or double articulation",
-    "Status": "",
-    "Character": "͜"
-  },
-  {
-    "IPA Number": 489,
-    "IPA Name": "Subscript right hook",
-    "USV": "0322",
-    "Unicode Name": "COMBINING RETROFLEX HOOK BELOW",
-    "IPA Description": "Rhoticity",
-    "Status": "Superseded by 419 (1989)",
-    "Character": "̢"
-  },
-  {
-    "IPA Number": 490,
-    "IPA Name": "Open corner",
-    "USV": "02F9",
-    "Unicode Name": "MODIFIER LETTER BEGIN HIGH TONE",
-    "IPA Description": "Release / burst",
-    "Status": "Not IPA usage",
-    "Character": "˹"
-  },
-  {
-    "IPA Number": 491,
-    "IPA Name": "Comma",
-    "USV": "002C",
-    "Unicode Name": "COMMA",
-    "IPA Description": "Pause (comma)",
-    "Status": "Not IPA usage",
-    "Character": ","
-  },
-  {
-    "IPA Number": 492,
-    "IPA Name": "Reversed apostrophe",
-    "USV": "02BB",
-    "Unicode Name": "MODIFIER LETTER TURNED COMMA",
-    "IPA Description": "Weak aspiration",
-    "Status": "Withdrawn (1979)",
-    "Character": "ʻ"
-  },
-  {
-    "IPA Number": 493,
-    "IPA Name": "Over-dot",
-    "USV": "0307",
-    "Unicode Name": "COMBINING DOT ABOVE",
-    "IPA Description": "Palatalization/centralization",
-    "Status": "Withdrawn (1979)",
-    "Character": "̇"
-  },
-  {
-    "IPA Number": 494,
-    "IPA Name": "Minus sign",
-    "USV": "02D7",
-    "Unicode Name": "MODIFIER LETTER MINUS SIGN",
-    "IPA Description": "Retracted variety (backed)",
-    "Status": "Use 414 or 418 (1989)",
-    "Character": "˗"
-  },
-  {
-    "IPA Number": 495,
-    "IPA Name": "Plus sign",
-    "USV": "02D6",
-    "Unicode Name": "MODIFIER LETTER PLUS SIGN",
-    "IPA Description": "Advanced variety (fronted)",
-    "Status": "Use 413 or 417 (1989)",
-    "Character": "˖"
-  },
-  {
-    "IPA Number": 496,
-    "IPA Name": "Superscript Y",
-    "USV": "02B8",
-    "Unicode Name": "MODIFIER LETTER SMALL Y",
-    "IPA Description": "High-front rounding / palatalized",
-    "Status": "Not IPA usage",
-    "Character": "ʸ"
-  },
-  {
-    "IPA Number": 497,
-    "IPA Name": "Under-dot",
-    "USV": "0323",
-    "Unicode Name": "COMBINING DOT BELOW",
-    "IPA Description": "Closer variety / fricative",
-    "Status": "Use 429 (1989)",
-    "Character": "̣"
-  },
-  {
-    "IPA Number": 498,
-    "IPA Name": "Subscript left hook",
-    "USV": "0321",
-    "Unicode Name": "COMBINING PALATALIZED HOOK BELOW",
-    "IPA Description": "Palatalized",
-    "Status": "Superseded by 421 (1989)",
-    "Character": "̡"
-  },
-  {
-    "IPA Number": 499,
-    "IPA Name": "Subscript W",
-    "USV": "032B",
-    "Unicode Name": "COMBINING INVERTED DOUBLE ARCH BELOW",
-    "IPA Description": "Labialized",
-    "Status": "Superseded by 420 (1989)",
-    "Character": "̫"
-  },
-  {
-    "IPA Number": 501,
-    "IPA Name": "Vertical stroke (Superior)",
-    "USV": "02C8",
-    "Unicode Name": "MODIFIER LETTER VERTICAL LINE",
-    "IPA Description": "Primary stress ",
-    "Status": "",
-    "Character": "ˈ"
-  },
-  {
-    "IPA Number": 502,
-    "IPA Name": "Vertical stroke (Inferior)",
-    "USV": "02CC",
-    "Unicode Name": "MODIFIER LETTER LOW VERTICAL LINE",
-    "IPA Description": "Secondary stress",
-    "Status": "",
-    "Character": "ˌ"
-  },
-  {
-    "IPA Number": 503,
-    "IPA Name": "Length mark",
-    "USV": "02D0",
-    "Unicode Name": "MODIFIER LETTER TRIANGULAR COLON",
-    "IPA Description": "Length mark",
-    "Status": "",
-    "Character": "ː"
-  },
-  {
-    "IPA Number": 504,
-    "IPA Name": "Half-length mark",
-    "USV": "02D1",
-    "Unicode Name": "MODIFIER LETTER HALF TRIANGULAR COLON",
-    "IPA Description": "Half-length",
-    "Status": "",
-    "Character": "ˑ"
-  },
-  {
-    "IPA Number": 505,
-    "IPA Name": "Breve",
-    "USV": "0306",
-    "Unicode Name": "COMBINING BREVE",
-    "IPA Description": "Extra-short",
-    "Status": "",
-    "Character": "̆"
-  },
+  # {
+  #   "IPA Number": 398,
+  #   "IPA Name": "Closed omega",
+  #   "USV": "0277",
+  #   "Unicode Name": "LATIN SMALL LETTER CLOSED OMEGA",
+  #   "IPA Description": "Near-close near-back rounded vowel",
+  #   "Status": "Superseded by 321 (1989)",
+  #   "Character": "ɷ"
+  # },
+  # {
+  #   "IPA Number": 399,
+  #   "IPA Name": "Iota",
+  #   "USV": "0269",
+  #   "Unicode Name": "LATIN SMALL LETTER IOTA",
+  #   "IPA Description": "Near-close near-front unrounded vowel",
+  #   "Status": "Superseded by 319 (1989)",
+  #   "Character": "ɩ"
+  # },
+  # {
+  #   "IPA Number": 401,
+  #   "IPA Name": "Apostrophe",
+  #   "USV": "02BC",
+  #   "Unicode Name": "MODIFIER LETTER APOSTROPHE",
+  #   "IPA Description": "Ejective",
+  #   "Status": "",
+  #   "Character": "ʼ"
+  # },
+  # {
+  #   "IPA Number": "402.1",
+  #   "IPA Name": "Under-ring",
+  #   "USV": "0325",
+  #   "Unicode Name": "COMBINING RING BELOW",
+  #   "IPA Description": "Voiceless",
+  #   "Status": "",
+  #   "Character": "̥"
+  # },
+  # {
+  #   "IPA Number": "402.2",
+  #   "IPA Name": "Over-ring",
+  #   "USV": "030A",
+  #   "Unicode Name": "COMBINING RING ABOVE",
+  #   "IPA Description": "Voiceless (use if character has descender)",
+  #   "Status": "",
+  #   "Character": "̊"
+  # },
+  # {
+  #   "IPA Number": 403,
+  #   "IPA Name": "Subscript wedge",
+  #   "USV": "032C",
+  #   "Unicode Name": "COMBINING CARON BELOW",
+  #   "IPA Description": "Voiced",
+  #   "Status": "(=663, 664)",
+  #   "Character": "̬"
+  # },
+  # {
+  #   "IPA Number": "404, 671",
+  #   "IPA Name": "Superscript H, Left-sited superscript H",
+  #   "USV": "02B0",
+  #   "Unicode Name": "MODIFIER LETTER SMALL H",
+  #   "IPA Description": "Pre-aspiration",
+  #   "Status": "(use 404)",
+  #   "Character": "ʰ"
+  # },
+  # {
+  #   "IPA Number": 405,
+  #   "IPA Name": "Subscript umlaut",
+  #   "USV": "0324",
+  #   "Unicode Name": "COMBINING DIAERESIS BELOW",
+  #   "IPA Description": "Breathy voiced",
+  #   "Status": "",
+  #   "Character": "̤"
+  # },
+  # {
+  #   "IPA Number": 406,
+  #   "IPA Name": "Subscript tilde",
+  #   "USV": "0330",
+  #   "Unicode Name": "COMBINING TILDE BELOW",
+  #   "IPA Description": "Creaky voiced",
+  #   "Status": "",
+  #   "Character": "̰"
+  # },
+  # {
+  #   "IPA Number": 407,
+  #   "IPA Name": "Subscript seagull",
+  #   "USV": "033C",
+  #   "Unicode Name": "COMBINING SEAGULL BELOW",
+  #   "IPA Description": "Linguolabial",
+  #   "Status": "",
+  #   "Character": "̼"
+  # },
+  # {
+  #   "IPA Number": 408,
+  #   "IPA Name": "Subscript bridge",
+  #   "USV": "032A",
+  #   "Unicode Name": "COMBINING BRIDGE BELOW",
+  #   "IPA Description": "Dental",
+  #   "Status": "",
+  #   "Character": "̪"
+  # },
+  # {
+  #   "IPA Number": 409,
+  #   "IPA Name": "Inverted subscript bridge",
+  #   "USV": "033A",
+  #   "Unicode Name": "COMBINING INVERTED BRIDGE BELOW",
+  #   "IPA Description": "Apical",
+  #   "Status": "",
+  #   "Character": "̺"
+  # },
+  # {
+  #   "IPA Number": 410,
+  #   "IPA Name": "Subscript square",
+  #   "USV": "033B",
+  #   "Unicode Name": "COMBINING SQUARE BELOW",
+  #   "IPA Description": "Laminal",
+  #   "Status": "",
+  #   "Character": "̻"
+  # },
+  # {
+  #   "IPA Number": 411,
+  #   "IPA Name": "Subscript right half-ring",
+  #   "USV": "0339",
+  #   "Unicode Name": "COMBINING RIGHT HALF RING BELOW",
+  #   "IPA Description": "More rounded",
+  #   "Status": "",
+  #   "Character": "̹"
+  # },
+  # {
+  #   "IPA Number": 412,
+  #   "IPA Name": "Subscript left half-ring",
+  #   "USV": "031C",
+  #   "Unicode Name": "COMBINING LEFT HALF RING BELOW",
+  #   "IPA Description": "Less rounded",
+  #   "Status": "",
+  #   "Character": "̜"
+  # },
+  # {
+  #   "IPA Number": 413,
+  #   "IPA Name": "Subscript plus",
+  #   "USV": "031F",
+  #   "Unicode Name": "COMBINING PLUS SIGN BELOW",
+  #   "IPA Description": "Advanced",
+  #   "Status": "",
+  #   "Character": "̟"
+  # },
+  # {
+  #   "IPA Number": 414,
+  #   "IPA Name": "Under-bar",
+  #   "USV": "0320",
+  #   "Unicode Name": "COMBINING MINUS SIGN BELOW",
+  #   "IPA Description": "Retracted",
+  #   "Status": "",
+  #   "Character": "̠"
+  # },
+  # {
+  #   "IPA Number": 415,
+  #   "IPA Name": "Umlaut",
+  #   "USV": "0308",
+  #   "Unicode Name": "COMBINING DIAERESIS",
+  #   "IPA Description": "Centralized",
+  #   "Status": "",
+  #   "Character": "̈"
+  # },
+  # {
+  #   "IPA Number": 416,
+  #   "IPA Name": "Over-cross",
+  #   "USV": "033D",
+  #   "Unicode Name": "COMBINING X ABOVE",
+  #   "IPA Description": "Mid-centralized",
+  #   "Status": "",
+  #   "Character": "̽"
+  # },
+  # {
+  #   "IPA Number": 417,
+  #   "IPA Name": "Advancing sign",
+  #   "USV": "0318",
+  #   "Unicode Name": "COMBINING LEFT TACK BELOW",
+  #   "IPA Description": "Advanced tongue root",
+  #   "Status": "",
+  #   "Character": "̘"
+  # },
+  # {
+  #   "IPA Number": 418,
+  #   "IPA Name": "Retracting sign",
+  #   "USV": "0319",
+  #   "Unicode Name": "COMBINING RIGHT TACK BELOW",
+  #   "IPA Description": "Retracted tongue root",
+  #   "Status": "",
+  #   "Character": "̙"
+  # },
+  # {
+  #   "IPA Number": 419,
+  #   "IPA Name": "Right Hook",
+  #   "USV": "02DE",
+  #   "Unicode Name": "MODIFIER LETTER RHOTIC HOOK",
+  #   "IPA Description": "Rhoticity",
+  #   "Status": "Unicode: use precomposed characters - see note 1",
+  #   "Character": "˞"
+  # },
+  # {
+  #   "IPA Number": 420,
+  #   "IPA Name": "Superscript W",
+  #   "USV": "02B7",
+  #   "Unicode Name": "MODIFIER LETTER SMALL W",
+  #   "IPA Description": "Labialized",
+  #   "Status": "",
+  #   "Character": "ʷ"
+  # },
+  # {
+  #   "IPA Number": 421,
+  #   "IPA Name": "Superscript J",
+  #   "USV": "02B2",
+  #   "Unicode Name": "MODIFIER LETTER SMALL J",
+  #   "IPA Description": "Palatalized",
+  #   "Status": "",
+  #   "Character": "ʲ"
+  # },
+  # {
+  #   "IPA Number": 422,
+  #   "IPA Name": "Superscript gamma",
+  #   "USV": "02E0",
+  #   "Unicode Name": "MODIFIER LETTER SMALL GAMMA",
+  #   "IPA Description": "Velarized",
+  #   "Status": "",
+  #   "Character": "ˠ"
+  # },
+  # {
+  #   "IPA Number": 423,
+  #   "IPA Name": "Superscript reversed glottal stop",
+  #   "USV": "02E4",
+  #   "Unicode Name": "MODIFIER LETTER SMALL REVERSED GLOTTAL STOP",
+  #   "IPA Description": "Pharyngealized",
+  #   "Status": "",
+  #   "Character": "ˤ"
+  # },
+  # {
+  #   "IPA Number": 424,
+  #   "IPA Name": "Superscript tilde",
+  #   "USV": "0303",
+  #   "Unicode Name": "COMBINING TILDE",
+  #   "IPA Description": "Nasalized",
+  #   "Status": "",
+  #   "Character": "̃"
+  # },
+  # {
+  #   "IPA Number": 425,
+  #   "IPA Name": "Superscript N",
+  #   "USV": "207F",
+  #   "Unicode Name": "SUPERSCRIPT LATIN SMALL LETTER N",
+  #   "IPA Description": "Nasal release",
+  #   "Status": "",
+  #   "Character": "ⁿ"
+  # },
+  # {
+  #   "IPA Number": 426,
+  #   "IPA Name": "Superscript L",
+  #   "USV": "02E1",
+  #   "Unicode Name": "MODIFIER LETTER SMALL L",
+  #   "IPA Description": "Lateral release",
+  #   "Status": "",
+  #   "Character": "ˡ"
+  # },
+  # {
+  #   "IPA Number": 427,
+  #   "IPA Name": "Corner",
+  #   "USV": "031A",
+  #   "Unicode Name": "COMBINING LEFT ANGLE ABOVE",
+  #   "IPA Description": "No audible release",
+  #   "Status": "",
+  #   "Character": "̚"
+  # },
+  # {
+  #   "IPA Number": 428,
+  #   "IPA Name": "Superimposed tilde",
+  #   "USV": "0334",
+  #   "Unicode Name": "COMBINING TILDE OVERLAY",
+  #   "IPA Description": "Velarized or pharyngealized",
+  #   "Status": "Unicode: use precomposed characters - see note 1",
+  #   "Character": "̴"
+  # },
+  # {
+  #   "IPA Number": "429.1",
+  #   "IPA Name": "Raising sign",
+  #   "USV": "031D",
+  #   "Unicode Name": "COMBINING UP TACK BELOW",
+  #   "IPA Description": "Raised",
+  #   "Status": "",
+  #   "Character": "̝"
+  # },
+  # {
+  #   "IPA Number": "429.2",
+  #   "IPA Name": "Raising sign",
+  #   "USV": "02D4",
+  #   "Unicode Name": "MODIFIER LETTER UP TACK",
+  #   "IPA Description": "Raised",
+  #   "Status": "",
+  #   "Character": "˔"
+  # },
+  # {
+  #   "IPA Number": "430.1",
+  #   "IPA Name": "Lowering sign",
+  #   "USV": "031E",
+  #   "Unicode Name": "COMBINING DOWN TACK BELOW",
+  #   "IPA Description": "Lowered",
+  #   "Status": "",
+  #   "Character": "̞"
+  # },
+  # {
+  #   "IPA Number": "430.2",
+  #   "IPA Name": "Lowering sign",
+  #   "USV": "02D5",
+  #   "Unicode Name": "MODIFIER LETTER DOWN TACK",
+  #   "IPA Description": "Lowered",
+  #   "Status": "",
+  #   "Character": "˕"
+  # },
+  # {
+  #   "IPA Number": 431,
+  #   "IPA Name": "Syllabicity mark",
+  #   "USV": "0329",
+  #   "Unicode Name": "COMBINING VERTICAL LINE BELOW",
+  #   "IPA Description": "Syllabic",
+  #   "Status": "",
+  #   "Character": "̩"
+  # },
+  # {
+  #   "IPA Number": 432,
+  #   "IPA Name": "Subscript arch",
+  #   "USV": "032F",
+  #   "Unicode Name": "COMBINING INVERTED BREVE BELOW",
+  #   "IPA Description": "Non-syllabic",
+  #   "Status": "",
+  #   "Character": "̯"
+  # },
+  # {
+  #   "IPA Number": "433.1",
+  #   "IPA Name": "Top tie bar",
+  #   "USV": "0361",
+  #   "Unicode Name": "COMBINING DOUBLE INVERTED BREVE",
+  #   "IPA Description": "Affricate or double articulation",
+  #   "Status": "",
+  #   "Character": "͡"
+  # },
+  # {
+  #   "IPA Number": "433.2",
+  #   "IPA Name": "Bottom tie bar",
+  #   "USV": "035C",
+  #   "Unicode Name": "COMBINING DOUBLE BREVE BELOW",
+  #   "IPA Description": "Affricate or double articulation",
+  #   "Status": "",
+  #   "Character": "͜"
+  # },
+  # {
+  #   "IPA Number": 489,
+  #   "IPA Name": "Subscript right hook",
+  #   "USV": "0322",
+  #   "Unicode Name": "COMBINING RETROFLEX HOOK BELOW",
+  #   "IPA Description": "Rhoticity",
+  #   "Status": "Superseded by 419 (1989)",
+  #   "Character": "̢"
+  # },
+  # {
+  #   "IPA Number": 490,
+  #   "IPA Name": "Open corner",
+  #   "USV": "02F9",
+  #   "Unicode Name": "MODIFIER LETTER BEGIN HIGH TONE",
+  #   "IPA Description": "Release / burst",
+  #   "Status": "Not IPA usage",
+  #   "Character": "˹"
+  # },
+  # {
+  #   "IPA Number": 491,
+  #   "IPA Name": "Comma",
+  #   "USV": "002C",
+  #   "Unicode Name": "COMMA",
+  #   "IPA Description": "Pause (comma)",
+  #   "Status": "Not IPA usage",
+  #   "Character": ","
+  # },
+  # {
+  #   "IPA Number": 492,
+  #   "IPA Name": "Reversed apostrophe",
+  #   "USV": "02BB",
+  #   "Unicode Name": "MODIFIER LETTER TURNED COMMA",
+  #   "IPA Description": "Weak aspiration",
+  #   "Status": "Withdrawn (1979)",
+  #   "Character": "ʻ"
+  # },
+  # {
+  #   "IPA Number": 493,
+  #   "IPA Name": "Over-dot",
+  #   "USV": "0307",
+  #   "Unicode Name": "COMBINING DOT ABOVE",
+  #   "IPA Description": "Palatalization/centralization",
+  #   "Status": "Withdrawn (1979)",
+  #   "Character": "̇"
+  # },
+  # {
+  #   "IPA Number": 494,
+  #   "IPA Name": "Minus sign",
+  #   "USV": "02D7",
+  #   "Unicode Name": "MODIFIER LETTER MINUS SIGN",
+  #   "IPA Description": "Retracted variety (backed)",
+  #   "Status": "Use 414 or 418 (1989)",
+  #   "Character": "˗"
+  # },
+  # {
+  #   "IPA Number": 495,
+  #   "IPA Name": "Plus sign",
+  #   "USV": "02D6",
+  #   "Unicode Name": "MODIFIER LETTER PLUS SIGN",
+  #   "IPA Description": "Advanced variety (fronted)",
+  #   "Status": "Use 413 or 417 (1989)",
+  #   "Character": "˖"
+  # },
+  # {
+  #   "IPA Number": 496,
+  #   "IPA Name": "Superscript Y",
+  #   "USV": "02B8",
+  #   "Unicode Name": "MODIFIER LETTER SMALL Y",
+  #   "IPA Description": "High-front rounding / palatalized",
+  #   "Status": "Not IPA usage",
+  #   "Character": "ʸ"
+  # },
+  # {
+  #   "IPA Number": 497,
+  #   "IPA Name": "Under-dot",
+  #   "USV": "0323",
+  #   "Unicode Name": "COMBINING DOT BELOW",
+  #   "IPA Description": "Closer variety / fricative",
+  #   "Status": "Use 429 (1989)",
+  #   "Character": "̣"
+  # },
+  # {
+  #   "IPA Number": 498,
+  #   "IPA Name": "Subscript left hook",
+  #   "USV": "0321",
+  #   "Unicode Name": "COMBINING PALATALIZED HOOK BELOW",
+  #   "IPA Description": "Palatalized",
+  #   "Status": "Superseded by 421 (1989)",
+  #   "Character": "̡"
+  # },
+  # {
+  #   "IPA Number": 499,
+  #   "IPA Name": "Subscript W",
+  #   "USV": "032B",
+  #   "Unicode Name": "COMBINING INVERTED DOUBLE ARCH BELOW",
+  #   "IPA Description": "Labialized",
+  #   "Status": "Superseded by 420 (1989)",
+  #   "Character": "̫"
+  # },
+  # {
+  #   "IPA Number": 501,
+  #   "IPA Name": "Vertical stroke (Superior)",
+  #   "USV": "02C8",
+  #   "Unicode Name": "MODIFIER LETTER VERTICAL LINE",
+  #   "IPA Description": "Primary stress ",
+  #   "Status": "",
+  #   "Character": "ˈ"
+  # },
+  # {
+  #   "IPA Number": 502,
+  #   "IPA Name": "Vertical stroke (Inferior)",
+  #   "USV": "02CC",
+  #   "Unicode Name": "MODIFIER LETTER LOW VERTICAL LINE",
+  #   "IPA Description": "Secondary stress",
+  #   "Status": "",
+  #   "Character": "ˌ"
+  # },
+  # {
+  #   "IPA Number": 503,
+  #   "IPA Name": "Length mark",
+  #   "USV": "02D0",
+  #   "Unicode Name": "MODIFIER LETTER TRIANGULAR COLON",
+  #   "IPA Description": "Length mark",
+  #   "Status": "",
+  #   "Character": "ː"
+  # },
+  # {
+  #   "IPA Number": 504,
+  #   "IPA Name": "Half-length mark",
+  #   "USV": "02D1",
+  #   "Unicode Name": "MODIFIER LETTER HALF TRIANGULAR COLON",
+  #   "IPA Description": "Half-length",
+  #   "Status": "",
+  #   "Character": "ˑ"
+  # },
+  # {
+  #   "IPA Number": 505,
+  #   "IPA Name": "Breve",
+  #   "USV": "0306",
+  #   "Unicode Name": "COMBINING BREVE",
+  #   "IPA Description": "Extra-short",
+  #   "Status": "",
+  #   "Character": "̆"
+  # },
   {
     "IPA Number": 506,
     "IPA Name": "Period",
@@ -1791,267 +1791,267 @@ ipa_book = [
     "Status": "",
     "Character": "."
   },
-  {
-    "IPA Number": 507,
-    "IPA Name": "Vertical line (thick)",
-    "USV": "007C",
-    "Unicode Name": "VERTICAL LINE",
-    "IPA Description": "Minor (foot) group",
-    "Status": "",
-    "Character": "|"
-  },
-  {
-    "IPA Number": 508,
-    "IPA Name": "Double vertical line (thick)",
-    "USV": "2016",
-    "Unicode Name": "DOUBLE VERTICAL LINE",
-    "IPA Description": "Major (intonation) group",
-    "Status": "",
-    "Character": "‖"
-  },
-  {
-    "IPA Number": 509,
-    "IPA Name": "Bottom tie bar",
-    "USV": "203F",
-    "Unicode Name": "UNDERTIE",
-    "IPA Description": "Linking (absence of a break)",
-    "Status": "",
-    "Character": "‿"
-  },
-  {
-    "IPA Number": 510,
-    "IPA Name": "Upward diagonal arrow",
-    "USV": "2197",
-    "Unicode Name": "NORTH EAST ARROW",
-    "IPA Description": "Global rise",
-    "Status": "",
-    "Character": "↗"
-  },
-  {
-    "IPA Number": 511,
-    "IPA Name": "Downward diagonal arrow",
-    "USV": "2198",
-    "Unicode Name": "SOUTH EAST ARROW",
-    "IPA Description": "Global fall",
-    "Status": "",
-    "Character": "↘"
-  },
-  {
-    "IPA Number": 512,
-    "IPA Name": "Double acute accent (over)",
-    "USV": "030B",
-    "Unicode Name": "COMBINING DOUBLE ACUTE ACCENT",
-    "IPA Description": "Extra high level",
-    "Status": "",
-    "Character": "̋"
-  },
-  {
-    "IPA Number": 513,
-    "IPA Name": "Acute accent (over)",
-    "USV": "0301",
-    "Unicode Name": "COMBINING ACUTE ACCENT",
-    "IPA Description": "High level",
-    "Status": "",
-    "Character": "́"
-  },
-  {
-    "IPA Number": 514,
-    "IPA Name": "Macron",
-    "USV": "0304",
-    "Unicode Name": "COMBINING MACRON",
-    "IPA Description": "Mid level",
-    "Status": "",
-    "Character": "̄"
-  },
-  {
-    "IPA Number": 515,
-    "IPA Name": "Grave accent (over)",
-    "USV": "0300",
-    "Unicode Name": "COMBINING GRAVE ACCENT",
-    "IPA Description": "Low level",
-    "Status": "",
-    "Character": "̀"
-  },
-  {
-    "IPA Number": 516,
-    "IPA Name": "Double grave accent (over)",
-    "USV": "030F",
-    "Unicode Name": "COMBINING DOUBLE GRAVE ACCENT",
-    "IPA Description": "Extra low level",
-    "Status": "",
-    "Character": "̏"
-  },
-  {
-    "IPA Number": 517,
-    "IPA Name": "Down arrow",
-    "USV": "A71B",
-    "Unicode Name": "MODIFIER LETTER RAISED UP ARROW",
-    "IPA Description": "Downstep",
-    "Status": "",
-    "Character": "ꜛ"
-  },
-  {
-    "IPA Number": 518,
-    "IPA Name": "Up arrow",
-    "USV": "A71C",
-    "Unicode Name": "MODIFIER LETTER RAISED DOWN ARROW",
-    "IPA Description": "Upstep",
-    "Status": "",
-    "Character": "ꜜ"
-  },
-  {
-    "IPA Number": 519,
-    "IPA Name": "Extra-high tone letter",
-    "USV": "02E5",
-    "Unicode Name": "MODIFIER LETTER EXTRA-HIGH TONE BAR",
-    "IPA Description": "Extra high level",
-    "Status": "",
-    "Character": "˥"
-  },
-  {
-    "IPA Number": 520,
-    "IPA Name": "High tone letter",
-    "USV": "02E6",
-    "Unicode Name": "MODIFIER LETTER HIGH TONE BAR",
-    "IPA Description": "High level",
-    "Status": "",
-    "Character": "˦"
-  },
-  {
-    "IPA Number": 521,
-    "IPA Name": "Mid tone letter",
-    "USV": "02E7",
-    "Unicode Name": "MODIFIER LETTER MID TONE BAR",
-    "IPA Description": "Mid level",
-    "Status": "",
-    "Character": "˧"
-  },
-  {
-    "IPA Number": 522,
-    "IPA Name": "Low tone letter",
-    "USV": "02E8",
-    "Unicode Name": "MODIFIER LETTER LOW TONE BAR",
-    "IPA Description": "Low level",
-    "Status": "",
-    "Character": "˨"
-  },
-  {
-    "IPA Number": 523,
-    "IPA Name": "Extra-low tone letter",
-    "USV": "02E9",
-    "Unicode Name": "MODIFIER LETTER EXTRA-LOW TONE BAR",
-    "IPA Description": "Extra low level",
-    "Status": "",
-    "Character": "˩"
-  },
-  {
-    "IPA Number": 524,
-    "IPA Name": "Wedge",
-    "USV": "030C",
-    "Unicode Name": "COMBINING CARON",
-    "IPA Description": "Rising contour",
-    "Status": "",
-    "Character": "̌"
-  },
-  {
-    "IPA Number": 525,
-    "IPA Name": "Circumflex",
-    "USV": "0302",
-    "Unicode Name": "COMBINING CIRCUMFLEX ACCENT",
-    "IPA Description": "Falling contour",
-    "Status": "",
-    "Character": "̂"
-  },
-  {
-    "IPA Number": 526,
-    "IPA Name": "Macron plus acute accent",
-    "USV": "1DC4",
-    "Unicode Name": "COMBINING MACRON-ACUTE",
-    "IPA Description": "High rising contour",
-    "Status": "",
-    "Character": "᷄"
-  },
-  {
-    "IPA Number": 527,
-    "IPA Name": "Grave accent plus macron",
-    "USV": "1DC5",
-    "Unicode Name": "COMBINING GRAVE-MACRON",
-    "IPA Description": "Low rising contour",
-    "Status": "",
-    "Character": "᷅"
-  },
-  {
-    "IPA Number": 528,
-    "IPA Name": "Grave plus acute plus grave accent",
-    "USV": "1DC8",
-    "Unicode Name": "COMBINING GRAVE-ACUTE-GRAVE",
-    "IPA Description": "Rising-falling contour",
-    "Status": "",
-    "Character": "᷈"
-  },
-  {
-    "IPA Number": 595,
-    "IPA Name": "Superscript arch",
-    "USV": "0311",
-    "Unicode Name": "COMBINING INVERTED BREVE",
-    "IPA Description": "Long falling tone / advanced / palatal",
-    "Status": "Not IPA usage",
-    "Character": "̑"
-  },
-  {
-    "IPA Number": 596,
-    "IPA Name": "Wedge; hacek",
-    "USV": "02C7",
-    "Unicode Name": "CARON",
-    "IPA Description": "Falling-rising tone",
-    "Status": "Usage redefined (1989) See 524",
-    "Character": "ˇ"
-  },
-  {
-    "IPA Number": 597,
-    "IPA Name": "Circumflex",
-    "USV": "02C6",
-    "Unicode Name": "MODIFIER LETTER CIRCUMFLEX ACCENT",
-    "IPA Description": "Rising-falling tone",
-    "Status": "Usage redefined (1989) See 525",
-    "Character": "ˆ"
-  },
-  {
-    "IPA Number": "598.1",
-    "IPA Name": "Subscript grave accent",
-    "USV": "0316",
-    "Unicode Name": "COMBINING GRAVE ACCENT BELOW",
-    "IPA Description": "Low falling tone",
-    "Status": "Superseded (1989)",
-    "Character": "̖"
-  },
-  {
-    "IPA Number": "598.2",
-    "IPA Name": "Subscript grave accent",
-    "USV": "02CE",
-    "Unicode Name": "MODIFIER LETTER LOW GRAVE ACCENT",
-    "IPA Description": "Low falling tone",
-    "Status": "Superseded (1989)",
-    "Character": "ˎ"
-  },
-  {
-    "IPA Number": "599.1",
-    "IPA Name": "Subscript acute accent",
-    "USV": "0317",
-    "Unicode Name": "COMBINING ACUTE ACCENT BELOW",
-    "IPA Description": "Low rising tone",
-    "Status": "Superseded (1989)",
-    "Character": "̗"
-  },
-  {
-    "IPA Number": "599.2",
-    "IPA Name": "Subscript acute accent",
-    "USV": "02CF",
-    "Unicode Name": "MODIFIER LETTER LOW ACUTE ACCENT",
-    "IPA Description": "Low rising tone",
-    "Status": "Superseded (1989)",
-    "Character": "ˏ"
-  },
+  # {
+  #   "IPA Number": 507,
+  #   "IPA Name": "Vertical line (thick)",
+  #   "USV": "007C",
+  #   "Unicode Name": "VERTICAL LINE",
+  #   "IPA Description": "Minor (foot) group",
+  #   "Status": "",
+  #   "Character": "|"
+  # },
+  # {
+  #   "IPA Number": 508,
+  #   "IPA Name": "Double vertical line (thick)",
+  #   "USV": "2016",
+  #   "Unicode Name": "DOUBLE VERTICAL LINE",
+  #   "IPA Description": "Major (intonation) group",
+  #   "Status": "",
+  #   "Character": "‖"
+  # },
+  # {
+  #   "IPA Number": 509,
+  #   "IPA Name": "Bottom tie bar",
+  #   "USV": "203F",
+  #   "Unicode Name": "UNDERTIE",
+  #   "IPA Description": "Linking (absence of a break)",
+  #   "Status": "",
+  #   "Character": "‿"
+  # },
+  # {
+  #   "IPA Number": 510,
+  #   "IPA Name": "Upward diagonal arrow",
+  #   "USV": "2197",
+  #   "Unicode Name": "NORTH EAST ARROW",
+  #   "IPA Description": "Global rise",
+  #   "Status": "",
+  #   "Character": "↗"
+  # },
+  # {
+  #   "IPA Number": 511,
+  #   "IPA Name": "Downward diagonal arrow",
+  #   "USV": "2198",
+  #   "Unicode Name": "SOUTH EAST ARROW",
+  #   "IPA Description": "Global fall",
+  #   "Status": "",
+  #   "Character": "↘"
+  # },
+  # {
+  #   "IPA Number": 512,
+  #   "IPA Name": "Double acute accent (over)",
+  #   "USV": "030B",
+  #   "Unicode Name": "COMBINING DOUBLE ACUTE ACCENT",
+  #   "IPA Description": "Extra high level",
+  #   "Status": "",
+  #   "Character": "̋"
+  # },
+  # {
+  #   "IPA Number": 513,
+  #   "IPA Name": "Acute accent (over)",
+  #   "USV": "0301",
+  #   "Unicode Name": "COMBINING ACUTE ACCENT",
+  #   "IPA Description": "High level",
+  #   "Status": "",
+  #   "Character": "́"
+  # },
+  # {
+  #   "IPA Number": 514,
+  #   "IPA Name": "Macron",
+  #   "USV": "0304",
+  #   "Unicode Name": "COMBINING MACRON",
+  #   "IPA Description": "Mid level",
+  #   "Status": "",
+  #   "Character": "̄"
+  # },
+  # {
+  #   "IPA Number": 515,
+  #   "IPA Name": "Grave accent (over)",
+  #   "USV": "0300",
+  #   "Unicode Name": "COMBINING GRAVE ACCENT",
+  #   "IPA Description": "Low level",
+  #   "Status": "",
+  #   "Character": "̀"
+  # },
+  # {
+  #   "IPA Number": 516,
+  #   "IPA Name": "Double grave accent (over)",
+  #   "USV": "030F",
+  #   "Unicode Name": "COMBINING DOUBLE GRAVE ACCENT",
+  #   "IPA Description": "Extra low level",
+  #   "Status": "",
+  #   "Character": "̏"
+  # },
+  # {
+  #   "IPA Number": 517,
+  #   "IPA Name": "Down arrow",
+  #   "USV": "A71B",
+  #   "Unicode Name": "MODIFIER LETTER RAISED UP ARROW",
+  #   "IPA Description": "Downstep",
+  #   "Status": "",
+  #   "Character": "ꜛ"
+  # },
+  # {
+  #   "IPA Number": 518,
+  #   "IPA Name": "Up arrow",
+  #   "USV": "A71C",
+  #   "Unicode Name": "MODIFIER LETTER RAISED DOWN ARROW",
+  #   "IPA Description": "Upstep",
+  #   "Status": "",
+  #   "Character": "ꜜ"
+  # },
+  # {
+  #   "IPA Number": 519,
+  #   "IPA Name": "Extra-high tone letter",
+  #   "USV": "02E5",
+  #   "Unicode Name": "MODIFIER LETTER EXTRA-HIGH TONE BAR",
+  #   "IPA Description": "Extra high level",
+  #   "Status": "",
+  #   "Character": "˥"
+  # },
+  # {
+  #   "IPA Number": 520,
+  #   "IPA Name": "High tone letter",
+  #   "USV": "02E6",
+  #   "Unicode Name": "MODIFIER LETTER HIGH TONE BAR",
+  #   "IPA Description": "High level",
+  #   "Status": "",
+  #   "Character": "˦"
+  # },
+  # {
+  #   "IPA Number": 521,
+  #   "IPA Name": "Mid tone letter",
+  #   "USV": "02E7",
+  #   "Unicode Name": "MODIFIER LETTER MID TONE BAR",
+  #   "IPA Description": "Mid level",
+  #   "Status": "",
+  #   "Character": "˧"
+  # },
+  # {
+  #   "IPA Number": 522,
+  #   "IPA Name": "Low tone letter",
+  #   "USV": "02E8",
+  #   "Unicode Name": "MODIFIER LETTER LOW TONE BAR",
+  #   "IPA Description": "Low level",
+  #   "Status": "",
+  #   "Character": "˨"
+  # },
+  # {
+  #   "IPA Number": 523,
+  #   "IPA Name": "Extra-low tone letter",
+  #   "USV": "02E9",
+  #   "Unicode Name": "MODIFIER LETTER EXTRA-LOW TONE BAR",
+  #   "IPA Description": "Extra low level",
+  #   "Status": "",
+  #   "Character": "˩"
+  # },
+  # {
+  #   "IPA Number": 524,
+  #   "IPA Name": "Wedge",
+  #   "USV": "030C",
+  #   "Unicode Name": "COMBINING CARON",
+  #   "IPA Description": "Rising contour",
+  #   "Status": "",
+  #   "Character": "̌"
+  # },
+  # {
+  #   "IPA Number": 525,
+  #   "IPA Name": "Circumflex",
+  #   "USV": "0302",
+  #   "Unicode Name": "COMBINING CIRCUMFLEX ACCENT",
+  #   "IPA Description": "Falling contour",
+  #   "Status": "",
+  #   "Character": "̂"
+  # },
+  # {
+  #   "IPA Number": 526,
+  #   "IPA Name": "Macron plus acute accent",
+  #   "USV": "1DC4",
+  #   "Unicode Name": "COMBINING MACRON-ACUTE",
+  #   "IPA Description": "High rising contour",
+  #   "Status": "",
+  #   "Character": "᷄"
+  # },
+  # {
+  #   "IPA Number": 527,
+  #   "IPA Name": "Grave accent plus macron",
+  #   "USV": "1DC5",
+  #   "Unicode Name": "COMBINING GRAVE-MACRON",
+  #   "IPA Description": "Low rising contour",
+  #   "Status": "",
+  #   "Character": "᷅"
+  # },
+  # {
+  #   "IPA Number": 528,
+  #   "IPA Name": "Grave plus acute plus grave accent",
+  #   "USV": "1DC8",
+  #   "Unicode Name": "COMBINING GRAVE-ACUTE-GRAVE",
+  #   "IPA Description": "Rising-falling contour",
+  #   "Status": "",
+  #   "Character": "᷈"
+  # },
+  # {
+  #   "IPA Number": 595,
+  #   "IPA Name": "Superscript arch",
+  #   "USV": "0311",
+  #   "Unicode Name": "COMBINING INVERTED BREVE",
+  #   "IPA Description": "Long falling tone / advanced / palatal",
+  #   "Status": "Not IPA usage",
+  #   "Character": "̑"
+  # },
+  # {
+  #   "IPA Number": 596,
+  #   "IPA Name": "Wedge; hacek",
+  #   "USV": "02C7",
+  #   "Unicode Name": "CARON",
+  #   "IPA Description": "Falling-rising tone",
+  #   "Status": "Usage redefined (1989) See 524",
+  #   "Character": "ˇ"
+  # },
+  # {
+  #   "IPA Number": 597,
+  #   "IPA Name": "Circumflex",
+  #   "USV": "02C6",
+  #   "Unicode Name": "MODIFIER LETTER CIRCUMFLEX ACCENT",
+  #   "IPA Description": "Rising-falling tone",
+  #   "Status": "Usage redefined (1989) See 525",
+  #   "Character": "ˆ"
+  # },
+  # {
+  #   "IPA Number": "598.1",
+  #   "IPA Name": "Subscript grave accent",
+  #   "USV": "0316",
+  #   "Unicode Name": "COMBINING GRAVE ACCENT BELOW",
+  #   "IPA Description": "Low falling tone",
+  #   "Status": "Superseded (1989)",
+  #   "Character": "̖"
+  # },
+  # {
+  #   "IPA Number": "598.2",
+  #   "IPA Name": "Subscript grave accent",
+  #   "USV": "02CE",
+  #   "Unicode Name": "MODIFIER LETTER LOW GRAVE ACCENT",
+  #   "IPA Description": "Low falling tone",
+  #   "Status": "Superseded (1989)",
+  #   "Character": "ˎ"
+  # },
+  # {
+  #   "IPA Number": "599.1",
+  #   "IPA Name": "Subscript acute accent",
+  #   "USV": "0317",
+  #   "Unicode Name": "COMBINING ACUTE ACCENT BELOW",
+  #   "IPA Description": "Low rising tone",
+  #   "Status": "Superseded (1989)",
+  #   "Character": "̗"
+  # },
+  # {
+  #   "IPA Number": "599.2",
+  #   "IPA Name": "Subscript acute accent",
+  #   "USV": "02CF",
+  #   "Unicode Name": "MODIFIER LETTER LOW ACUTE ACCENT",
+  #   "IPA Description": "Low rising tone",
+  #   "Status": "Superseded (1989)",
+  #   "Character": "ˏ"
+  # },
   {
     "IPA Number": 601,
     "IPA Name": "Double bridge",
@@ -2088,24 +2088,24 @@ ipa_book = [
     "Status": "",
     "Character": "ʫ"
   },
-  {
-    "IPA Number": 611,
-    "IPA Name": "Balloon",
-    "USV": "274D",
-    "Unicode Name": "SHADOWED WHITE CIRCLE",
-    "IPA Description": "Unidentified segment(s)",
-    "Status": "",
-    "Character": "❍"
-  },
-  {
-    "IPA Number": 612,
-    "IPA Name": "Asterisk",
-    "USV": "002A",
-    "Unicode Name": "ASTERISK",
-    "IPA Description": "Placeholder symbol",
-    "Status": "",
-    "Character": "*"
-  },
+  # {
+  #   "IPA Number": 611,
+  #   "IPA Name": "Balloon",
+  #   "USV": "274D",
+  #   "Unicode Name": "SHADOWED WHITE CIRCLE",
+  #   "IPA Description": "Unidentified segment(s)",
+  #   "Status": "",
+  #   "Character": "❍"
+  # },
+  # {
+  #   "IPA Number": 612,
+  #   "IPA Name": "Asterisk",
+  #   "USV": "002A",
+  #   "Unicode Name": "ASTERISK",
+  #   "IPA Description": "Placeholder symbol",
+  #   "Status": "",
+  #   "Character": "*"
+  # },
   {
     "IPA Number": "621, 722",
     "IPA Name": "Upper-case V",
@@ -2160,249 +2160,249 @@ ipa_book = [
     "Status": "(use 626)",
     "Character": "J"
   },
-  {
-    "IPA Number": 627,
-    "IPA Name": "Upper-case O-E ligature",
-    "USV": "0152",
-    "Unicode Name": "LATIN CAPITAL LIGATURE OE",
-    "IPA Description": "Oesophageal speech",
-    "Status": "",
-    "Character": "Œ"
-  },
-  {
-    "IPA Number": 628,
-    "IPA Name": "Upper-case Greek Theta",
-    "USV": "0398",
-    "Unicode Name": "GREEK CAPITAL LETTER THETA",
-    "IPA Description": "Protruded-tongue voice",
-    "Status": "",
-    "Character": "Θ"
-  },
-  {
-    "IPA Number": 634,
-    "IPA Name": "Forte",
-    "USV": "1D191",
-    "Unicode Name": "MUSICAL SYMBOL FORTE",
-    "IPA Description": "Loud speech",
-    "Status": "",
-    "Character": "𝆑"
-  },
-  {
-    "IPA Number": 636,
-    "IPA Name": "Piano",
-    "USV": "1D18F",
-    "Unicode Name": "MUSICAL SYMBOL PIANO",
-    "IPA Description": "Quiet speech",
-    "Status": "",
-    "Character": "𝆏"
-  },
-  {
-    "IPA Number": 640,
-    "IPA Name": "Numeral one",
-    "USV": "0031",
-    "Unicode Name": "DIGIT ONE",
-    "IPA Description": "Slight degree",
-    "Status": "",
-    "Character": "1"
-  },
-  {
-    "IPA Number": 641,
-    "IPA Name": "Numeral two",
-    "USV": "0032",
-    "Unicode Name": "DIGIT TWO",
-    "IPA Description": "Moderate degree",
-    "Status": "",
-    "Character": "2"
-  },
-  {
-    "IPA Number": 642,
-    "IPA Name": "Numeral three",
-    "USV": "0033",
-    "Unicode Name": "DIGIT THREE",
-    "IPA Description": "Extreme degree",
-    "Status": "",
-    "Character": "3"
-  },
-  {
-    "IPA Number": 651,
-    "IPA Name": "Superscript bridge",
-    "USV": "0346",
-    "Unicode Name": "COMBINING BRIDGE ABOVE",
-    "IPA Description": "Dentolabial",
-    "Status": "",
-    "Character": "͆"
-  },
-  {
-    "IPA Number": 652,
-    "IPA Name": "Subscript double arrow",
-    "USV": "034D",
-    "Unicode Name": "COMBINING LEFT RIGHT ARROW BELOW",
-    "IPA Description": "Labial spreading",
-    "Status": "",
-    "Character": "͍"
-  },
-  {
-    "IPA Number": 654,
-    "IPA Name": "Superscript slashed tilde",
-    "USV": "034A",
-    "Unicode Name": "COMBINING NOT TILDE ABOVE",
-    "IPA Description": "Denasal",
-    "Status": "",
-    "Character": "͊"
-  },
-  {
-    "IPA Number": 655,
-    "IPA Name": "Superscript dotted tilde",
-    "USV": "034B",
-    "Unicode Name": "COMBINING HOMOTHETIC ABOVE",
-    "IPA Description": "Nasal escape",
-    "Status": "",
-    "Character": "͋"
-  },
-  {
-    "IPA Number": 656,
-    "IPA Name": "Superscript double tilde",
-    "USV": "034C",
-    "Unicode Name": "COMBINING ALMOST EQUAL TO ABOVE",
-    "IPA Description": "Velopharyngeal friction",
-    "Status": "",
-    "Character": "͌"
-  },
-  {
-    "IPA Number": 657,
-    "IPA Name": "Subscript double syllabicity mark",
-    "USV": "0348",
-    "Unicode Name": "COMBINING DOUBLE VERTICAL LINE BELOW",
-    "IPA Description": "Stronger articulation",
-    "Status": "",
-    "Character": "͈"
-  },
-  {
-    "IPA Number": 658,
-    "IPA Name": "Subscript corner",
-    "USV": "0349",
-    "Unicode Name": "COMBINING LEFT ANGLE BELOW",
-    "IPA Description": "Weaker articulation",
-    "Status": "",
-    "Character": "͉"
-  },
-  {
-    "IPA Number": 659,
-    "IPA Name": "Backslash",
-    "USV": "005C",
-    "Unicode Name": "REVERSE SOLIDUS",
-    "IPA Description": "Reiterated articulation",
-    "Status": "",
-    "Character": "\\"
-  },
-  {
-    "IPA Number": 660,
-    "IPA Name": "Subscript upward arrow-head",
-    "USV": "034E",
-    "Unicode Name": "COMBINING UPWARDS ARROW BELOW",
-    "IPA Description": "Whistled articulation",
-    "Status": "",
-    "Character": "͎"
-  },
-  {
-    "IPA Number": 661,
-    "IPA Name": "Down full arrow",
-    "USV": "2193",
-    "Unicode Name": "DOWNWARDS ARROW",
-    "IPA Description": "Ingressive air flow",
-    "Status": "",
-    "Character": "↓"
-  },
-  {
-    "IPA Number": 662,
-    "IPA Name": "Up full arrow",
-    "USV": "2191",
-    "Unicode Name": "UPWARDS ARROW",
-    "IPA Description": "Egressive air flow",
-    "Status": "",
-    "Character": "↑"
-  },
-  {
-    "IPA Number": "663, 664",
-    "IPA Name": "Left-sited subscript wedge, Right-sited subscript ",
-    "USV": "02EC",
-    "Unicode Name": "MODIFIER LETTER VOICING",
-    "IPA Description": "Post-voicing",
-    "Status": "(=403)",
-    "Character": "ˬ"
-  },
-  {
-    "IPA Number": 673,
-    "IPA Name": "Superscript cursive V",
-    "USV": "1DB9",
-    "Unicode Name": "MODIFIER LETTER SMALL V WITH HOOK",
-    "IPA Description": "Labiodentalized",
-    "Status": "",
-    "Character": "ᶹ"
-  },
-  {
-    "IPA Number": 674,
-    "IPA Name": "Subscript right arrow",
-    "USV": "0362",
-    "Unicode Name": "COMBINING DOUBLE RIGHTWARDS ARROW BELOW",
-    "IPA Description": "Slurred articulation",
-    "Status": "",
-    "Character": "͢"
-  },
-  {
-    "IPA Number": 675,
-    "IPA Name": "Subscript equals sign",
-    "USV": "0347",
-    "Unicode Name": "COMBINING EQUALS SIGN BELOW",
-    "IPA Description": "Alveolarized",
-    "Status": "",
-    "Character": "͇"
-  },
-  {
-    "IPA Number": 676,
-    "IPA Name": "Superscript inverted small capital R",
-    "USV": "02B6",
-    "Unicode Name": "MODIFIER LETTER SMALL CAPITAL INVERTED R",
-    "IPA Description": "Uvularized",
-    "Status": "",
-    "Character": "ʶ"
-  },
-  {
-    "IPA Number": 680,
-    "IPA Name": "Superscript equals sign",
-    "USV": "02ED",
-    "Unicode Name": "MODIFIER LETTER UNASPIRATED",
-    "IPA Description": "Unaspirated",
-    "Status": "",
-    "Character": "˭"
-  },
-  {
-    "IPA Number": 681,
-    "IPA Name": "Subscript left pointer",
-    "USV": "02F1",
-    "Unicode Name": "MODIFIER LETTER LOW LEFT ARROWHEAD",
-    "IPA Description": "Laterally offset to the right",
-    "Status": "",
-    "Character": "˱"
-  },
-  {
-    "IPA Number": 682,
-    "IPA Name": "Subscript right pointer",
-    "USV": "02F2",
-    "Unicode Name": "MODIFIER LETTER LOW RIGHT ARROWHEAD",
-    "IPA Description": "Laterally offset to the left",
-    "Status": "",
-    "Character": "˲"
-  },
-  {
-    "IPA Number": 683,
-    "IPA Name": "Right-sited subscript tilde",
-    "USV": "02F7",
-    "Unicode Name": "MODIFIER LETTER LOW TILDE",
-    "IPA Description": "Creaky",
-    "Status": "(=406)",
-    "Character": "˷"
-  },
+  # {
+  #   "IPA Number": 627,
+  #   "IPA Name": "Upper-case O-E ligature",
+  #   "USV": "0152",
+  #   "Unicode Name": "LATIN CAPITAL LIGATURE OE",
+  #   "IPA Description": "Oesophageal speech",
+  #   "Status": "",
+  #   "Character": "Œ"
+  # },
+  # {
+  #   "IPA Number": 628,
+  #   "IPA Name": "Upper-case Greek Theta",
+  #   "USV": "0398",
+  #   "Unicode Name": "GREEK CAPITAL LETTER THETA",
+  #   "IPA Description": "Protruded-tongue voice",
+  #   "Status": "",
+  #   "Character": "Θ"
+  # },
+  # {
+  #   "IPA Number": 634,
+  #   "IPA Name": "Forte",
+  #   "USV": "1D191",
+  #   "Unicode Name": "MUSICAL SYMBOL FORTE",
+  #   "IPA Description": "Loud speech",
+  #   "Status": "",
+  #   "Character": "𝆑"
+  # },
+  # {
+  #   "IPA Number": 636,
+  #   "IPA Name": "Piano",
+  #   "USV": "1D18F",
+  #   "Unicode Name": "MUSICAL SYMBOL PIANO",
+  #   "IPA Description": "Quiet speech",
+  #   "Status": "",
+  #   "Character": "𝆏"
+  # },
+  # {
+  #   "IPA Number": 640,
+  #   "IPA Name": "Numeral one",
+  #   "USV": "0031",
+  #   "Unicode Name": "DIGIT ONE",
+  #   "IPA Description": "Slight degree",
+  #   "Status": "",
+  #   "Character": "1"
+  # },
+  # {
+  #   "IPA Number": 641,
+  #   "IPA Name": "Numeral two",
+  #   "USV": "0032",
+  #   "Unicode Name": "DIGIT TWO",
+  #   "IPA Description": "Moderate degree",
+  #   "Status": "",
+  #   "Character": "2"
+  # },
+  # {
+  #   "IPA Number": 642,
+  #   "IPA Name": "Numeral three",
+  #   "USV": "0033",
+  #   "Unicode Name": "DIGIT THREE",
+  #   "IPA Description": "Extreme degree",
+  #   "Status": "",
+  #   "Character": "3"
+  # },
+  # {
+  #   "IPA Number": 651,
+  #   "IPA Name": "Superscript bridge",
+  #   "USV": "0346",
+  #   "Unicode Name": "COMBINING BRIDGE ABOVE",
+  #   "IPA Description": "Dentolabial",
+  #   "Status": "",
+  #   "Character": "͆"
+  # },
+  # {
+  #   "IPA Number": 652,
+  #   "IPA Name": "Subscript double arrow",
+  #   "USV": "034D",
+  #   "Unicode Name": "COMBINING LEFT RIGHT ARROW BELOW",
+  #   "IPA Description": "Labial spreading",
+  #   "Status": "",
+  #   "Character": "͍"
+  # },
+  # {
+  #   "IPA Number": 654,
+  #   "IPA Name": "Superscript slashed tilde",
+  #   "USV": "034A",
+  #   "Unicode Name": "COMBINING NOT TILDE ABOVE",
+  #   "IPA Description": "Denasal",
+  #   "Status": "",
+  #   "Character": "͊"
+  # },
+  # {
+  #   "IPA Number": 655,
+  #   "IPA Name": "Superscript dotted tilde",
+  #   "USV": "034B",
+  #   "Unicode Name": "COMBINING HOMOTHETIC ABOVE",
+  #   "IPA Description": "Nasal escape",
+  #   "Status": "",
+  #   "Character": "͋"
+  # },
+  # {
+  #   "IPA Number": 656,
+  #   "IPA Name": "Superscript double tilde",
+  #   "USV": "034C",
+  #   "Unicode Name": "COMBINING ALMOST EQUAL TO ABOVE",
+  #   "IPA Description": "Velopharyngeal friction",
+  #   "Status": "",
+  #   "Character": "͌"
+  # },
+  # {
+  #   "IPA Number": 657,
+  #   "IPA Name": "Subscript double syllabicity mark",
+  #   "USV": "0348",
+  #   "Unicode Name": "COMBINING DOUBLE VERTICAL LINE BELOW",
+  #   "IPA Description": "Stronger articulation",
+  #   "Status": "",
+  #   "Character": "͈"
+  # },
+  # {
+  #   "IPA Number": 658,
+  #   "IPA Name": "Subscript corner",
+  #   "USV": "0349",
+  #   "Unicode Name": "COMBINING LEFT ANGLE BELOW",
+  #   "IPA Description": "Weaker articulation",
+  #   "Status": "",
+  #   "Character": "͉"
+  # },
+  # {
+  #   "IPA Number": 659,
+  #   "IPA Name": "Backslash",
+  #   "USV": "005C",
+  #   "Unicode Name": "REVERSE SOLIDUS",
+  #   "IPA Description": "Reiterated articulation",
+  #   "Status": "",
+  #   "Character": "\\"
+  # },
+  # {
+  #   "IPA Number": 660,
+  #   "IPA Name": "Subscript upward arrow-head",
+  #   "USV": "034E",
+  #   "Unicode Name": "COMBINING UPWARDS ARROW BELOW",
+  #   "IPA Description": "Whistled articulation",
+  #   "Status": "",
+  #   "Character": "͎"
+  # },
+  # {
+  #   "IPA Number": 661,
+  #   "IPA Name": "Down full arrow",
+  #   "USV": "2193",
+  #   "Unicode Name": "DOWNWARDS ARROW",
+  #   "IPA Description": "Ingressive air flow",
+  #   "Status": "",
+  #   "Character": "↓"
+  # },
+  # {
+  #   "IPA Number": 662,
+  #   "IPA Name": "Up full arrow",
+  #   "USV": "2191",
+  #   "Unicode Name": "UPWARDS ARROW",
+  #   "IPA Description": "Egressive air flow",
+  #   "Status": "",
+  #   "Character": "↑"
+  # },
+  # {
+  #   "IPA Number": "663, 664",
+  #   "IPA Name": "Left-sited subscript wedge, Right-sited subscript ",
+  #   "USV": "02EC",
+  #   "Unicode Name": "MODIFIER LETTER VOICING",
+  #   "IPA Description": "Post-voicing",
+  #   "Status": "(=403)",
+  #   "Character": "ˬ"
+  # },
+  # {
+  #   "IPA Number": 673,
+  #   "IPA Name": "Superscript cursive V",
+  #   "USV": "1DB9",
+  #   "Unicode Name": "MODIFIER LETTER SMALL V WITH HOOK",
+  #   "IPA Description": "Labiodentalized",
+  #   "Status": "",
+  #   "Character": "ᶹ"
+  # },
+  # {
+  #   "IPA Number": 674,
+  #   "IPA Name": "Subscript right arrow",
+  #   "USV": "0362",
+  #   "Unicode Name": "COMBINING DOUBLE RIGHTWARDS ARROW BELOW",
+  #   "IPA Description": "Slurred articulation",
+  #   "Status": "",
+  #   "Character": "͢"
+  # },
+  # {
+  #   "IPA Number": 675,
+  #   "IPA Name": "Subscript equals sign",
+  #   "USV": "0347",
+  #   "Unicode Name": "COMBINING EQUALS SIGN BELOW",
+  #   "IPA Description": "Alveolarized",
+  #   "Status": "",
+  #   "Character": "͇"
+  # },
+  # {
+  #   "IPA Number": 676,
+  #   "IPA Name": "Superscript inverted small capital R",
+  #   "USV": "02B6",
+  #   "Unicode Name": "MODIFIER LETTER SMALL CAPITAL INVERTED R",
+  #   "IPA Description": "Uvularized",
+  #   "Status": "",
+  #   "Character": "ʶ"
+  # },
+  # {
+  #   "IPA Number": 680,
+  #   "IPA Name": "Superscript equals sign",
+  #   "USV": "02ED",
+  #   "Unicode Name": "MODIFIER LETTER UNASPIRATED",
+  #   "IPA Description": "Unaspirated",
+  #   "Status": "",
+  #   "Character": "˭"
+  # },
+  # {
+  #   "IPA Number": 681,
+  #   "IPA Name": "Subscript left pointer",
+  #   "USV": "02F1",
+  #   "Unicode Name": "MODIFIER LETTER LOW LEFT ARROWHEAD",
+  #   "IPA Description": "Laterally offset to the right",
+  #   "Status": "",
+  #   "Character": "˱"
+  # },
+  # {
+  #   "IPA Number": 682,
+  #   "IPA Name": "Subscript right pointer",
+  #   "USV": "02F2",
+  #   "Unicode Name": "MODIFIER LETTER LOW RIGHT ARROWHEAD",
+  #   "IPA Description": "Laterally offset to the left",
+  #   "Status": "",
+  #   "Character": "˲"
+  # },
+  # {
+  #   "IPA Number": 683,
+  #   "IPA Name": "Right-sited subscript tilde",
+  #   "USV": "02F7",
+  #   "Unicode Name": "MODIFIER LETTER LOW TILDE",
+  #   "IPA Description": "Creaky",
+  #   "Status": "(=406)",
+  #   "Character": "˷"
+  # },
   {
     "IPA Number": 701,
     "IPA Name": "Upper-case A",
@@ -2583,67 +2583,67 @@ ipa_book = [
     "Status": "",
     "Character": "Z"
   },
-  {
-    "IPA Number": 901,
-    "IPA Name": "Left square bracket",
-    "USV": "005B",
-    "Unicode Name": "LEFT SQUARE BRACKET",
-    "IPA Description": "Begin phonetic transcription",
-    "Status": "",
-    "Character": "["
-  },
-  {
-    "IPA Number": 902,
-    "IPA Name": "Right square bracket",
-    "USV": "005D",
-    "Unicode Name": "RIGHT SQUARE BRACKET",
-    "IPA Description": "End phonetic transcription",
-    "Status": "",
-    "Character": "]"
-  },
-  {
-    "IPA Number": 903,
-    "IPA Name": "Forward slash",
-    "USV": "002F",
-    "Unicode Name": "SOLIDUS",
-    "IPA Description": "Begin/end phonemic transcription",
-    "Status": "",
-    "Character": "/"
-  },
-  {
-    "IPA Number": 906,
-    "IPA Name": "Left parenthesis",
-    "USV": "0028",
-    "Unicode Name": "LEFT PARENTHESIS",
-    "IPA Description": "Silent articulation (Mouthing), Indistinguishable utterance (begin)",
-    "Status": "",
-    "Character": "("
-  },
-  {
-    "IPA Number": 907,
-    "IPA Name": "Right parenthesis",
-    "USV": "0029",
-    "Unicode Name": "RIGHT PARENTHESIS",
-    "IPA Description": "Silent articulation (Mouthing), Indistinguishable utterance (end)",
-    "Status": "",
-    "Character": ")"
-  },
-  {
-    "IPA Number": 910,
-    "IPA Name": "Left brace",
-    "USV": "007B",
-    "Unicode Name": "LEFT CURLY BRACKET",
-    "IPA Description": "Begin prosodic notation",
-    "Status": "",
-    "Character": "{"
-  },
-  {
-    "IPA Number": 911,
-    "IPA Name": "Right brace",
-    "USV": "007D",
-    "Unicode Name": "RIGHT CURLY BRACKET",
-    "IPA Description": "End prosodic notation",
-    "Status": "",
-    "Character": "}"
-  }
+  # {
+  #   "IPA Number": 901,
+  #   "IPA Name": "Left square bracket",
+  #   "USV": "005B",
+  #   "Unicode Name": "LEFT SQUARE BRACKET",
+  #   "IPA Description": "Begin phonetic transcription",
+  #   "Status": "",
+  #   "Character": "["
+  # },
+  # {
+  #   "IPA Number": 902,
+  #   "IPA Name": "Right square bracket",
+  #   "USV": "005D",
+  #   "Unicode Name": "RIGHT SQUARE BRACKET",
+  #   "IPA Description": "End phonetic transcription",
+  #   "Status": "",
+  #   "Character": "]"
+  # },
+  # {
+  #   "IPA Number": 903,
+  #   "IPA Name": "Forward slash",
+  #   "USV": "002F",
+  #   "Unicode Name": "SOLIDUS",
+  #   "IPA Description": "Begin/end phonemic transcription",
+  #   "Status": "",
+  #   "Character": "/"
+  # },
+  # {
+  #   "IPA Number": 906,
+  #   "IPA Name": "Left parenthesis",
+  #   "USV": "0028",
+  #   "Unicode Name": "LEFT PARENTHESIS",
+  #   "IPA Description": "Silent articulation (Mouthing), Indistinguishable utterance (begin)",
+  #   "Status": "",
+  #   "Character": "("
+  # },
+  # {
+  #   "IPA Number": 907,
+  #   "IPA Name": "Right parenthesis",
+  #   "USV": "0029",
+  #   "Unicode Name": "RIGHT PARENTHESIS",
+  #   "IPA Description": "Silent articulation (Mouthing), Indistinguishable utterance (end)",
+  #   "Status": "",
+  #   "Character": ")"
+  # },
+  # {
+  #   "IPA Number": 910,
+  #   "IPA Name": "Left brace",
+  #   "USV": "007B",
+  #   "Unicode Name": "LEFT CURLY BRACKET",
+  #   "IPA Description": "Begin prosodic notation",
+  #   "Status": "",
+  #   "Character": "{"
+  # },
+  # {
+  #   "IPA Number": 911,
+  #   "IPA Name": "Right brace",
+  #   "USV": "007D",
+  #   "Unicode Name": "RIGHT CURLY BRACKET",
+  #   "IPA Description": "End prosodic notation",
+  #   "Status": "",
+  #   "Character": "}"
+  # }
 ]
