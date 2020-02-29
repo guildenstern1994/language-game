@@ -4,4 +4,4 @@ setup:
 	pip install -U -e .
 test:
 	cd tests && pwd && \
-	python -m unittest discover -s ./ -p '*.py'
+	python3 -m unittest discover -s ./ -p '*.py'

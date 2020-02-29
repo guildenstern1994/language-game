@@ -685,7 +685,7 @@ ipa_book = [
     "Character": "ǀ"
   },
   {
-    "IPA Number": "178, 679",
+    "IPA Number": 178,
     "IPA Name": "Exclamation point, Right-sited exclamation point",
     "USV": "01C3",
     "Unicode Name": "LATIN LETTER RETROFLEX CLICK",
@@ -2107,7 +2107,7 @@ ipa_book = [
   #   "Character": "*"
   # },
   {
-    "IPA Number": "621, 722",
+    "IPA Number": 621,
     "IPA Name": "Upper-case V",
     "USV": "0056",
     "Unicode Name": "LATIN CAPITAL LETTER V",
@@ -2116,7 +2116,7 @@ ipa_book = [
     "Character": "V"
   },
   {
-    "IPA Number": "622, 706",
+    "IPA Number": 622,
     "IPA Name": "Upper-case F",
     "USV": "0046",
     "Unicode Name": "LATIN CAPITAL LETTER F",
@@ -2125,7 +2125,7 @@ ipa_book = [
     "Character": "F"
   },
   {
-    "IPA Number": "623, 723",
+    "IPA Number": 623,
     "IPA Name": "Upper-case W",
     "USV": "0057",
     "Unicode Name": "LATIN CAPITAL LETTER W",
@@ -2134,7 +2134,7 @@ ipa_book = [
     "Character": "W"
   },
   {
-    "IPA Number": "624, 703",
+    "IPA Number": 624,
     "IPA Name": "Upper-case C",
     "USV": "0043",
     "Unicode Name": "LATIN CAPITAL LETTER C",
@@ -2143,7 +2143,7 @@ ipa_book = [
     "Character": "C"
   },
   {
-    "IPA Number": "625, 712",
+    "IPA Number": 625,
     "IPA Name": "Upper-case L",
     "USV": "004C",
     "Unicode Name": "LATIN CAPITAL LETTER L",
@@ -2152,7 +2152,7 @@ ipa_book = [
     "Character": "L"
   },
   {
-    "IPA Number": "626, 710",
+    "IPA Number": 626,
     "IPA Name": "Upper-case J",
     "USV": "004A",
     "Unicode Name": "LATIN CAPITAL LETTER J",

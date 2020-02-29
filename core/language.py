@@ -96,7 +96,7 @@ class Language(object):
         Default order_weights correspond to distribution of real-world languages
         '''
         if override_value is not None: return override_value
-        return random.choices(word_orders, order_weights, k=1)
+        return random.choices(word_orders, order_weights, k=1)[0]
 
     def create_grammar(self, override_value):
         '''
