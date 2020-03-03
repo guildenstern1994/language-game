@@ -1,6 +1,6 @@
 import unittest
 import sys
-from core.language import Language
+from core.language import Language, CharacterSet
 from libs.core_utils import IPA
 
 
@@ -48,6 +48,14 @@ class Language_functions_in_isolation(unittest.TestCase):
         for element in sc3:
             self.assertTrue(type(element) is str)
 
+    def test_choose_character_set(self):
+        test_language = Language("Testlish", None)
+        cs = test_language.choose_character_set()
+        self.assertTrue(type(cs) is CharacterSet)
+        self.assertTrue(type(cs.chars) is list)
+        for c in cs.chars:
+            self.assertTrue(type(c) is str)
+        self.assertTrue(type(cs.type) is str)
 
 
 if __name__ == '__main__':

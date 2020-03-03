@@ -365,3 +365,9 @@ class CharacterSet(object):
         self.chars = letters
         self.type = script_type
 
+    def __eq__(self, other):
+        if type(other) is CharacterSet:
+            if self.chars == other.chars and self.type == other.type:
+                return True
+        return False
+
