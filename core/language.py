@@ -45,8 +45,12 @@ class Language(object):
 
         self.map_phonemes_to_graphemes()
 
-        
-
+    def __eq__(self, other):
+        if type(other) is Language:
+            similarity = self.compare_language(other)
+            if similarity > 80:
+                return  True
+        return False
     def create_phonetic_inventory(self, override_value):
         '''
         TODO tweak magic number
@@ -161,9 +165,9 @@ class Language(object):
         #TODO reverse map
         '''
         seed1 = random.uniform(0,1)
+        self.phoneme_to_grapheme_map = {}
         if self.script_type == "alphabet":
             unused = self.script.copy()
-            self.phoneme_to_grapheme_map = {}
             used = []
             for phoneme in self.phonetic_inventory:
                 if seed1 < .5:
@@ -243,27 +247,27 @@ class Language(object):
         '''
         TODO tweak magic numbers
         '''
-        difference = 0.0
+        similarity = 0.0
         phonetic_inv_mod = 35 * self.calculate_phonetic_inventory_mod(language2.phonetic_inventory)
         word_order_mod = 10 * self.calculate_word_order_mod(language2.word_order)
         grammar_mod = self.calculate_grammar_mod(language2.grammar)
         script_mod = 5 * self.calculate_script_mod(language2.script, language2.script_type)
         word_bag_mod = 50 * self.calculate_word_bag_mod(language2.word_bag)
 
-        difference += phonetic_inv_mod
-        difference += word_order_mod
-        difference += grammar_mod
-        difference += script_mod
-        difference += word_bag_mod
+        similarity += phonetic_inv_mod
+        similarity += word_order_mod
+        similarity += grammar_mod
+        similarity += script_mod
+        similarity += word_bag_mod
 
         logger.info("phonetic inventory contributed %d  to the total difference" % phonetic_inv_mod)
         logger.info("word order contributed %d  to the total difference" % word_order_mod)
         logger.info("grammar contributed %d  to the total difference" % grammar_mod)
         logger.info("script contributed %d  to the total difference" % script_mod)
         logger.info("word bag contributed %d  to the total difference" % word_bag_mod)
-        logger.info("total difference is %d" % difference)
+        logger.info("total similarity is %d" % similarity)
 
-        return difference
+        return similarity
 
     def calculate_phonetic_inventory_mod(self, pi2):
         match = 0

@@ -57,6 +57,24 @@ class Language_functions_in_isolation(unittest.TestCase):
             self.assertTrue(type(c) is str)
         self.assertTrue(type(cs.type) is str)
 
+    def test_map_phonemes_to_graphemes(self):
+        test_language = Language("Testlist", None, script_type="no_script")
+        test_language.map_phonemes_to_graphemes()
+        self.assertTrue(test_language.phoneme_to_grapheme_map == {})
+        lang2 = Language("Testlist", None, script_type="alphabet")
+        lang2.map_phonemes_to_graphemes()
+        for key in lang2.phoneme_to_grapheme_map.keys():
+            self.assertTrue(type(key) is int)
+            self.assertTrue(type(lang2.phoneme_to_grapheme_map[key]) is dict)
+            cur_sum = 0
+            for key2 in lang2.phoneme_to_grapheme_map[key].keys():
+                self.assertTrue(type(key2) is str)
+                self.assertTrue(type(lang2.phoneme_to_grapheme_map[key][key2] is float))
+                cur_sum += lang2.phoneme_to_grapheme_map[key][key2]
+            self.assertTrue(cur_sum - 1.0 < .001 and cur_sum - 1.0 > -.001)
+
+
+
 
 if __name__ == '__main__':
     unittest.main()
