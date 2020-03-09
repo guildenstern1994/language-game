@@ -58,10 +58,10 @@ class Language_functions_in_isolation(unittest.TestCase):
         self.assertTrue(type(cs.type) is str)
 
     def test_map_phonemes_to_graphemes(self):
-        test_language = Language("Testlist", None, script_type="no_script")
+        test_language = Language("Testlish", None, script_type="no_script")
         test_language.map_phonemes_to_graphemes()
         self.assertTrue(test_language.phoneme_to_grapheme_map == {})
-        lang2 = Language("Testlist", None, script_type="alphabet")
+        lang2 = Language("Testlish", None, script_type="alphabet")
         lang2.map_phonemes_to_graphemes()
         for key in lang2.phoneme_to_grapheme_map.keys():
             self.assertTrue(type(key) is int)
@@ -74,7 +74,7 @@ class Language_functions_in_isolation(unittest.TestCase):
             self.assertTrue(cur_sum - 1.0 < .001 and cur_sum - 1.0 > -.001)
 
     def test_pick_grapheme(self):
-        test_language = Language("Testlist", None, script_type="no_script")
+        test_language = Language("Testlish", None, script_type="no_script")
         used = []
         unused = ['a', 'b', 'c', 'd']
         g, used2, unused2 = test_language.pick_grapheme(used.copy(), unused.copy())
@@ -83,6 +83,11 @@ class Language_functions_in_isolation(unittest.TestCase):
         self.assertFalse(g in unused2)
         self.assertTrue(g in used2)
 
+    def test_create_language_family(self):
+        test_language = Language("Testlish", None, script_type="no_script")
+        family = test_language.create_language_family(None)
+        self.assertTrue(type(family) is str)
+        self.assertTrue(family == "Testlish")
 
 
 
