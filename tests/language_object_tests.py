@@ -73,6 +73,16 @@ class Language_functions_in_isolation(unittest.TestCase):
                 cur_sum += lang2.phoneme_to_grapheme_map[key][key2]
             self.assertTrue(cur_sum - 1.0 < .001 and cur_sum - 1.0 > -.001)
 
+    def test_pick_grapheme(self):
+        test_language = Language("Testlist", None, script_type="no_script")
+        used = []
+        unused = ['a', 'b', 'c', 'd']
+        g, used2, unused2 = test_language.pick_grapheme(used.copy(), unused.copy())
+        self.assertTrue(type(g) is str)
+        self.assertTrue(g in unused)
+        self.assertFalse(g in unused2)
+        self.assertTrue(g in used2)
+
 
 
 
