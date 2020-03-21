@@ -21,29 +21,32 @@ class Language(object):
     '''
     def __init__(self, name, parent, nodes=[], idioms={}, word_bag={}, dialects=None, 
         phonetic_inventory=None, phonetic_probs=None, word_order=None, grammar=None, 
-        script=None, script_type="alphabet", language_family=None, events=None, event_log=None):
+        script=None, script_type="alphabet", language_family=None, events=None, event_log=None, json=None):
         '''
         Parameters:
             name: str
             parent: Language() or None
         '''
-        self.name = name
-        self.parent = parent
-        self.word_bag = word_bag
-        self.idioms = idioms
-        self.nodes = nodes
-        self.event_log = []
+        if json is not None:
+            self.import_from_json(json)
+        else:
+            self.name = name
+            self.parent = parent
+            self.word_bag = word_bag
+            self.idioms = idioms
+            self.nodes = nodes
+            self.event_log = []
 
-  
-        self.phonetic_inventory = self.create_phonetic_inventory(phonetic_inventory)
-        self.phonetic_probs = self.create_phonetic_probs(phonetic_probs)
-        self.word_order = self.create_word_order(word_order)
-        self.grammar = self.create_grammar(grammar)
-        self.script = self.create_script(script, script_type)
-        self.language_family = self.create_language_family(language_family)
-        self.events = self.create_events(events)
+      
+            self.phonetic_inventory = self.create_phonetic_inventory(phonetic_inventory)
+            self.phonetic_probs = self.create_phonetic_probs(phonetic_probs)
+            self.word_order = self.create_word_order(word_order)
+            self.grammar = self.create_grammar(grammar)
+            self.script = self.create_script(script, script_type)
+            self.language_family = self.create_language_family(language_family)
+            self.events = self.create_events(events)
 
-        self.map_phonemes_to_graphemes()
+            self.map_phonemes_to_graphemes()
 
     def __eq__(self, other):
         if type(other) is Language:
@@ -361,6 +364,25 @@ class Language(object):
         TODO
         '''
         pass
+
+    def import_from_json(self, json):
+        '''
+        Import language spec from a json file
+        '''
+        self.name = json['name']
+        self.parent = json['parent']
+        self.word_bag = json['word_bag']
+        self.idioms = json['idioms']
+        self.nodes = json['nodes']
+        self.event_log =json['event_log']
+        self.phonetic_inventory = json['phonetic_inventory']
+        self.phonetic_probs = json['phonetic_probs']
+        self.word_order = json['word_order']
+        self.grammar = json['grammar']
+        self.script = json['script']
+        self.language_family = json['language_faimly']
+        self.events = json['events']
+        self.phoneme_to_grapheme_map = json['phoneme_to_grapheme_map']
 
 
 class CharacterSet(object):
