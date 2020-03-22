@@ -384,6 +384,29 @@ class Language(object):
         self.events = json['events']
         self.phoneme_to_grapheme_map = json['phoneme_to_grapheme_map']
 
+    def serialize_to_json(self):
+        json = {}
+        json['name'] = self.name
+        json['word_bag'] = self.parent
+        json['idioms'] = self.idioms
+        json['nodes'] = self.nodes
+        json['event_log'] = self.event_log
+        json['phonetic_inventory'] = self.phonetic_inventory
+        json['phonetic_probs'] = self.phonetic_probs
+        json['word_order'] = self.word_order
+        json['grammar'] = self.grammar
+        json['script'] = self.script
+        json['language_family'] = self.language_family
+        json['events'] = self.events
+        json['phoneme_to_grapheme_map'] = self.phoneme_to_grapheme_map
+        return json
+
+    def export_to_file(self, file=None):
+        ret = self.serialize_to_json()
+        if file == None:
+            file = "saves/test_lang.json"
+        json.dump(ret)
+
 
 class CharacterSet(object):
 
