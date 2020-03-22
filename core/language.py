@@ -402,6 +402,9 @@ class Language(object):
         return json
 
     def export_to_file(self, file=None):
+        '''
+        TODO: update architecture for use in the actual game
+        '''
         ret = self.serialize_to_json()
         if file == None:
             file = "saves/test_lang.json"
