@@ -11,6 +11,7 @@ Example: English
 import json
 import random
 import logging
+import uuid
 from libs.core_utils import IPA, ALPHABETS
 logger = logging.getLogger(__name__)
 
@@ -173,6 +174,9 @@ class Language(object):
             unused = self.script.copy()
             used = []
             for phoneme in self.phonetic_inventory:
+                if phoneme == 506:
+                    self.phoneme_to_grapheme_map[phoneme] = {" ": 1.0}
+                    continue
                 if seed1 < .5:
                     grapheme, used, unused = self.pick_grapheme(used, unused)
                     self.phoneme_to_grapheme_map[phoneme] = {grapheme: 1.0}
@@ -192,6 +196,7 @@ class Language(object):
                     grapheme1, used, unused = self.pick_grapheme(used, unused)
                     grapheme2, used, unused = self.pick_grapheme(used, unused)
                     grapheme3, used, unused = self.pick_grapheme(used, unused)
+
                     used_graphemes = []
                     prob_sum = 0.0
                     self.phoneme_to_grapheme_map[phoneme] = {}
@@ -203,6 +208,7 @@ class Language(object):
                             # print("PR: ", type(phoneme))
                             self.phoneme_to_grapheme_map[phoneme][grapheme] = prob
                             prob_sum += prob
+                            used_graphemes.append(grapheme)
                     for key in self.phoneme_to_grapheme_map[phoneme].keys():
                         self.phoneme_to_grapheme_map[phoneme][key] = self.phoneme_to_grapheme_map[phoneme][key] / prob_sum
                 
@@ -274,6 +280,7 @@ class Language(object):
 
     def calculate_phonetic_inventory_mod(self, pi2):
         match = 0
+        denominator = 0
         for phoneme in pi2:
             if phoneme in self.phonetic_inventory:
                 match += 1
@@ -299,6 +306,8 @@ class Language(object):
         return 0
 
     def calculate_word_bag_mod(self, wb2):
+        if len(wb2) == 0 or len(self.word_bag) == 0:
+            return 1.0
         count = 0
         for word in self.word_bag:
             if word in wb2: #TODO test rigorously, not sure this works with a complex equality function
@@ -314,7 +323,8 @@ class Language(object):
         TODO: Support for cross-type comparisons
         TODO improve calculation
         '''
-        if language.script_type != stype2: return 0.0
+        if self.script_type != stype2: return 0.0
+        if len(sc2) == 0 or len(self.script) == 0: return 1.0
         count = 0
         for char in self.script:
             if char in sc2:
@@ -338,7 +348,6 @@ class Language(object):
             done = False
             while not done:
                 cur_phoneme = random.choice(self.phonetic_probs[cur_phoneme])
-                print(cur_phoneme)
                 if cur_phoneme == 506:
                     break
                 phoneme_array.append(cur_phoneme)
@@ -371,6 +380,7 @@ class Language(object):
         '''
         self.name = json['name']
         self.parent = json['parent']
+        self.script_type = json['script_type']
         self.word_bag = json['word_bag']
         self.idioms = json['idioms']
         self.nodes = json['nodes']
@@ -380,14 +390,16 @@ class Language(object):
         self.word_order = json['word_order']
         self.grammar = json['grammar']
         self.script = json['script']
-        self.language_family = json['language_faimly']
+        self.language_family = json['language_family']
         self.events = json['events']
         self.phoneme_to_grapheme_map = json['phoneme_to_grapheme_map']
 
     def serialize_to_json(self):
         json = {}
         json['name'] = self.name
-        json['word_bag'] = self.parent
+        json['parent'] = self.parent
+        json['script_type'] = self.script_type
+        json['word_bag'] = self.word_bag
         json['idioms'] = self.idioms
         json['nodes'] = self.nodes
         json['event_log'] = self.event_log
@@ -406,9 +418,13 @@ class Language(object):
         TODO: update architecture for use in the actual game
         '''
         ret = self.serialize_to_json()
+
+        filename = self.name + str(uuid.uuid4()) + '.json'
         if file == None:
-            file = "saves/test_lang.json"
-        json.dump(ret)
+            file = filename
+        with open(file, "w") as f:
+            json.dump(ret, f, indent = 4,
+               ensure_ascii = False)
 
 
 class CharacterSet(object):
