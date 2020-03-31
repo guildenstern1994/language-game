@@ -100,6 +100,12 @@ class Language_functions_in_isolation(unittest.TestCase):
             test2_json = json.load(save)
         test2 = Language("", None, json=test2_json)
         self.assertTrue(test1 == test2)
+        test3 = Language("Testlish", None, script_type="alphabet")
+        test3.export_to_file(file="test_saves/test_alphabet_lang.json")
+        with open ('test_saves/test_alphabet_lang.json', 'r') as save:
+            test4_json = json.load(save)
+        test4 = Language("", None, json=test4_json)
+        self.assertTrue(test3 == test4)
 
 
 
