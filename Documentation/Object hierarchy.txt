@@ -67,6 +67,18 @@ Example: London
 		by class
 	Events obj
 
+Pop
+Purpose: Abstraction of a population group
+	Name: str
+	Age: str
+	Generation cohort: int
+	Languages: list(Language)
+	Profession: str
+	Class: str
+	Religiion: str
+	Ethnicity: str
+
+
 Language
 Purpose: Represent an average of mutually intelligible dialects
 Instantiated with starting values at the beginning of the game, later determined as an average of dialect features. If dialects no longer pass certain mutual intelligibility checks (or due to certain government policies), a dialect may split and become its own language.
