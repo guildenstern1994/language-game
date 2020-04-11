@@ -107,6 +107,16 @@ class Language_functions_in_isolation(unittest.TestCase):
         test4 = Language("", None, json=test4_json)
         self.assertTrue(test3 == test4)
 
+    def test_difference(self):
+        base_lang = Language("Base", None, script_type="no_script")
+        match = 0
+        for i in range(0, 10):
+            other_lang = Language("Other", None, script_type="no_script")
+            if base_lang == other_lang:
+                match += 1
+        print("Matched: %d/10" % match)
+        self.assertTrue(match < 1)
+
 
 
 
