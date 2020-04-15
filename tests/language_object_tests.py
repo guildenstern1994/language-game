@@ -8,7 +8,7 @@ from libs.core_utils import IPA
 class Language_functions_in_isolation(unittest.TestCase):
 
     def test_phonetic_inv(self):
-        test_language = Language("Testlish", None)
+        test_language = Language( None)
         pi = test_language.create_phonetic_inventory(None)
         self.assertTrue(506 in pi)
         self.assertEqual(type(pi), list)
@@ -17,7 +17,7 @@ class Language_functions_in_isolation(unittest.TestCase):
             self.assertTrue(type(item) is int)
 
     def test_create_phonetic_probs(self):
-        test_language = Language("Testlish", None)
+        test_language = Language(None)
         pp = test_language.create_phonetic_probs(None)
         self.assertTrue('^' in pp.keys())
         self.assertTrue(type(pp) is dict)
@@ -29,13 +29,13 @@ class Language_functions_in_isolation(unittest.TestCase):
                 self.assertTrue(type(pp[key][subkey]) is float)
 
     def test_create_word_order(self):
-        test_language = Language("Testlish", None)
+        test_language = Language( None)
         wo = test_language.create_word_order(None)
         # print(wo)
         self.assertTrue(type(wo) is str)
 
     def test_create_script(self):
-        test_language = Language("Testlish", None)
+        test_language = Language( None)
         sc = test_language.create_script(None, "no_script")
         self.assertEqual(test_language.script_type, "no_script")
         self.assertEqual(sc, [])
@@ -50,7 +50,7 @@ class Language_functions_in_isolation(unittest.TestCase):
             self.assertTrue(type(element) is str)
 
     def test_choose_character_set(self):
-        test_language = Language("Testlish", None)
+        test_language = Language( None)
         cs = test_language.choose_character_set()
         self.assertTrue(type(cs) is CharacterSet)
         self.assertTrue(type(cs.chars) is list)
@@ -59,10 +59,10 @@ class Language_functions_in_isolation(unittest.TestCase):
         self.assertTrue(type(cs.type) is str)
 
     def test_map_phonemes_to_graphemes(self):
-        test_language = Language("Testlish", None, script_type="no_script")
+        test_language = Language( None, script_type="no_script")
         test_language.map_phonemes_to_graphemes()
         self.assertTrue(test_language.phoneme_to_grapheme_map == {})
-        lang2 = Language("Testlish", None, script_type="alphabet")
+        lang2 = Language( None, script_type="alphabet")
         lang2.map_phonemes_to_graphemes()
         for key in lang2.phoneme_to_grapheme_map.keys():
             self.assertTrue(type(key) is int)
@@ -79,7 +79,7 @@ class Language_functions_in_isolation(unittest.TestCase):
             self.assertTrue(cur_sum - 1.0 < .001 and cur_sum - 1.0 > -.001)
 
     def test_pick_grapheme(self):
-        test_language = Language("Testlish", None, script_type="no_script")
+        test_language = Language( None, script_type="no_script")
         used = []
         unused = ['a', 'b', 'c', 'd']
         g, used2, unused2 = test_language.pick_grapheme(used.copy(), unused.copy())
@@ -88,19 +88,19 @@ class Language_functions_in_isolation(unittest.TestCase):
         self.assertTrue(g in used2)
 
     def test_create_language_family(self):
-        test_language = Language("Testlish", None, script_type="no_script")
+        test_language = Language(None, name="Testlish", script_type="no_script")
         family = test_language.create_language_family(None)
         self.assertTrue(type(family) is str)
         self.assertTrue(family == "Testlish")
 
     def test_export(self):
-        test1 = Language("Testlish", None, script_type="no_script")
+        test1 = Language( None, script_type="no_script")
         test1.export_to_file(file="test_saves/test_lang.json")
         with open('test_saves/test_lang.json', 'r') as save:
             test2_json = json.load(save)
         test2 = Language("", None, json=test2_json)
         self.assertTrue(test1 == test2)
-        test3 = Language("Testlish", None, script_type="alphabet")
+        test3 = Language( None, script_type="alphabet")
         test3.export_to_file(file="test_saves/test_alphabet_lang.json")
         with open ('test_saves/test_alphabet_lang.json', 'r') as save:
             test4_json = json.load(save)
@@ -108,10 +108,10 @@ class Language_functions_in_isolation(unittest.TestCase):
         self.assertTrue(test3 == test4)
 
     def test_difference(self):
-        base_lang = Language("Base", None, script_type="no_script")
+        base_lang = Language(None, name="Base", script_type="no_script")
         match = 0
         for i in range(0, 10):
-            other_lang = Language("Other", None, script_type="no_script")
+            other_lang = Language(None, name="Other", script_type="no_script")
             if base_lang == other_lang:
                 match += 1
         print("Matched: %d/10" % match)

@@ -20,7 +20,7 @@ class Language(object):
     '''
     TODO: more grammar features
     '''
-    def __init__(self, name, parent, nodes=[], idioms={}, word_bag={}, dialects=None, 
+    def __init__(self, parent, name=None, nodes=[], idioms={}, word_bag={}, dialects=None, 
         phonetic_inventory=None, phonetic_probs=None, word_order=None, grammar=None, 
         script=None, script_type="alphabet", language_family=None, events=None, event_log=None, json=None):
         '''
@@ -31,23 +31,22 @@ class Language(object):
         if json is not None:
             self.import_from_json(json)
         else:
-            self.name = name
             self.parent = parent
             self.word_bag = word_bag
             self.idioms = idioms
             self.nodes = nodes
             self.event_log = []
 
-      
             self.phonetic_inventory = self.create_phonetic_inventory(phonetic_inventory)
             self.phonetic_probs = self.create_phonetic_probs(phonetic_probs)
             self.word_order = self.create_word_order(word_order)
             self.grammar = self.create_grammar(grammar)
             self.script = self.create_script(script, script_type)
+            self.map_phonemes_to_graphemes()
+            self.name = self.create_lang_name(name)
             self.language_family = self.create_language_family(language_family)
             self.events = self.create_events(events)
 
-            self.map_phonemes_to_graphemes()
 
     def __eq__(self, other):
         if type(other) is Language:
@@ -55,6 +54,19 @@ class Language(object):
             if similarity > 80:
                 return  True
         return False
+
+    def create_lang_name(self, override_value):
+        '''
+        Create name for this language
+        '''
+        if override_value is not None:
+            self.word_bag[override_value] = override_value
+            return override_value
+        else:
+            name = self.generate_word(meaning="language name")
+            self.word_bag[str(name["phonemes"])] = name
+            return str(name["phonemes"])
+
     def create_phonetic_inventory(self, override_value):
         '''
         TODO tweak magic number
@@ -335,7 +347,7 @@ class Language(object):
         denominator = len(sc2) + len(self.script)
         return float(count) / float(denominator)
 
-    def generate_word(mode="default"):
+    def generate_word(self, mode="default", meaning=None):
         '''
         Support other script types
         write generate_meaning
@@ -347,22 +359,27 @@ class Language(object):
             phoneme_array = []
             done = False
             while not done:
-                cur_phoneme = random.choice(self.phonetic_probs[cur_phoneme])
+                cur_phoneme = random.choices(list(self.phonetic_probs[cur_phoneme].keys()), list(self.phonetic_probs[cur_phoneme].values()), k=1)[0]
                 if cur_phoneme == 506:
                     break
                 phoneme_array.append(cur_phoneme)
         if self.script_type == "alphabet":
             written_form = ""
             for phoneme in phoneme_array:
-                written_form += self.phoneme_to_grapheme_map[phoneme]
-        meaning = self.generate_meaning()
+                grapheme = random.choices(list(self.phoneme_to_grapheme_map[phoneme].keys()), list(self.phoneme_to_grapheme_map[phoneme].values()), k=1)[0]
+
+                written_form += grapheme
+        else:
+            written_form = None
+        meaning = self.generate_meaning(meaning)
         return {"phonemes": phoneme_array, "written_form": written_form, "meaning": meaning}
 
 
-    def generate_meaning():
+    def generate_meaning(self, override_value):
         '''
-        TODO
+        TODO actal meaning generation
         '''
+        if override_value is not None: return override_value
         return None
 
 
