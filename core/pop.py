@@ -1,5 +1,7 @@
 import uuid
 
+from core.language import Language
+
 
 class Pop(object):
 	'''
@@ -42,7 +44,7 @@ class Pop(object):
 
 	def generate_cohort(self, override_value):
 		'''
-		TODO
+		TODO more dynamic mechanics
 		'''
 		if override_value is not None: return override_value
 		cohort = self.languages[0].name + '00'
@@ -50,41 +52,74 @@ class Pop(object):
 
 	def generate_languages(self, override_value):
 		'''
-		TODO
+		Populate language field, or generate a new language
+		TODO: propagate new language up to game state
 		'''
-		pass
+		if override_value is not None: return override_value
+		return [Language(None)]
 
 	def generate_socialclass(self, override_value):
 		'''
-		TODO
+		Should not be called without an override value
 		'''
-		pass
+		if override_value is not None: return override_value
+		return "worker"
 
 	def generate_profession(self, override_value):
 		'''
-		TODO
+		Should not be called without an override_value
 		'''
-		pass
+		if override_value is not None: return override_value
+		return "unemployed"
 
 
 	def generate_ethnicity(self, override_value):
 		'''
-		TODO
+		Should not be called without an override valuue
 		'''
-		pass
+		if override_value is not None: return override_value
+		return "Defaultian"
 
 	def generate_religion(self, override_value):
 		'''
-		TODO
+		Should not be called without an override value
 		'''
-		pass
+		if override_value is not None: return override_value
+		return "Agnostic"
 
 	def import_from_json(self, json):
 		'''
 		Import from file
-		TODO
+		
 		'''
-		pass
+		self.location = json['location']
+		self.home = json['home']
+		self.age = json['age']
+		self.languages = json['languages']
+		self.cohort = json['cohort']
+		self.uuid = json['uuuid']
+		self.socialclass = json['socialclass']
+		self.profession = json['profession']
+		self.ethnicity = json['ethnicity']
+		self.religion = json['religion']
+
+	def serialize_to_json(self):
+		'''
+		Export to json for writing to file
+		TODO: evaluate what should be an object and what should be a reference
+		'''
+		json = {}
+		json['location'] = self.location
+		json['home'] = self.home
+		json['age'] = self.age
+		json['languages'] = self.languages
+		json['cohort'] = self.cohort
+		json['uuid'] = self.uuid
+		json['socialclass'] = self.socialclass
+		json['profession'] = self.profession
+		json['ethnicity'] = self.ethnicity
+		json['religion'] = self.religion
+
 
 	def reproduce(self):
 		'''

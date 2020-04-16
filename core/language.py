@@ -12,7 +12,7 @@ import json
 import random
 import logging
 import uuid
-from libs.core_utils import IPA, ALPHABETS
+from libs.core_utils import IPA, ALPHABETS, convert_index_to_ipa, export_to_file
 logger = logging.getLogger(__name__)
 
 
@@ -20,7 +20,7 @@ class Language(object):
     '''
     TODO: more grammar features
     '''
-    def __init__(self, parent, name=None, nodes=[], idioms={}, word_bag={}, dialects=None, 
+    def __init__(self, parent, name=None, nodes=None, idioms=None, word_bag=None, dialects=None, 
         phonetic_inventory=None, phonetic_probs=None, word_order=None, grammar=None, 
         script=None, script_type="alphabet", language_family=None, events=None, event_log=None, json=None):
         '''
@@ -32,11 +32,10 @@ class Language(object):
             self.import_from_json(json)
         else:
             self.parent = parent
-            self.word_bag = word_bag
-            self.idioms = idioms
-            self.nodes = nodes
+            self.word_bag = self.create_word_bag(word_bag)
+            self.idioms = self.create_idioms(idioms)
+            self.nodes = self.create_nodes(nodes)
             self.event_log = []
-
             self.phonetic_inventory = self.create_phonetic_inventory(phonetic_inventory)
             self.phonetic_probs = self.create_phonetic_probs(phonetic_probs)
             self.word_order = self.create_word_order(word_order)
@@ -55,6 +54,19 @@ class Language(object):
                 return  True
         return False
 
+    def create_word_bag(self, override_value):
+        if override_value is not None: return override_value
+        return {}
+
+    def create_idioms(self, override_value):
+        if override_value is not None: return override_value
+        return {}
+
+    def create_nodes(self, override_value):
+        if override_value is not None: return override_value
+        return []
+
+
     def create_lang_name(self, override_value):
         '''
         Create name for this language
@@ -64,8 +76,8 @@ class Language(object):
             return override_value
         else:
             name = self.generate_word(meaning="language name")
-            self.word_bag[str(name["phonemes"])] = name
-            return str(name["phonemes"])
+            self.word_bag[convert_index_to_ipa(name["phonemes"])] = name
+            return convert_index_to_ipa(name["phonemes"])
 
     def create_phonetic_inventory(self, override_value):
         '''
@@ -372,7 +384,7 @@ class Language(object):
         else:
             written_form = None
         meaning = self.generate_meaning(meaning)
-        return {"phonemes": phoneme_array, "written_form": written_form, "meaning": meaning}
+        return {"phonemes": phoneme_array, "written_form": written_form, "ipa":convert_index_to_ipa(phoneme_array), "meaning": meaning}
 
 
     def generate_meaning(self, override_value):
@@ -430,18 +442,7 @@ class Language(object):
         json['phoneme_to_grapheme_map'] = self.phoneme_to_grapheme_map
         return json
 
-    def export_to_file(self, file=None):
-        '''
-        TODO: update architecture for use in the actual game
-        '''
-        ret = self.serialize_to_json()
-
-        filename = self.name + str(uuid.uuid4()) + '.json'
-        if file == None:
-            file = filename
-        with open(file, "w") as f:
-            json.dump(ret, f, indent = 4,
-               ensure_ascii = False)
+    
 
 
 class CharacterSet(object):

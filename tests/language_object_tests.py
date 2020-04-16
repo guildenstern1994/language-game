@@ -2,7 +2,7 @@ import unittest
 import sys
 import json
 from core.language import Language, CharacterSet
-from libs.core_utils import IPA
+from libs.core_utils import IPA, export_to_file
 
 
 class Language_functions_in_isolation(unittest.TestCase):
@@ -95,17 +95,23 @@ class Language_functions_in_isolation(unittest.TestCase):
 
     def test_export(self):
         test1 = Language( None, script_type="no_script")
-        test1.export_to_file(file="test_saves/test_lang.json")
+        json_data = test1.serialize_to_json()
+        export_to_file(json_data, file="test_saves/test_lang.json")
         with open('test_saves/test_lang.json', 'r') as save:
             test2_json = json.load(save)
-        test2 = Language("", None, json=test2_json)
+        test2 = Language(None, json=test2_json)
         self.assertTrue(test1 == test2)
         test3 = Language( None, script_type="alphabet")
-        test3.export_to_file(file="test_saves/test_alphabet_lang.json")
+        json_data2 = test3.serialize_to_json()
+        export_to_file(json_data2, file="test_saves/test_alphabet_lang.json")
         with open ('test_saves/test_alphabet_lang.json', 'r') as save:
             test4_json = json.load(save)
-        test4 = Language("", None, json=test4_json)
+        test4 = Language(None, json=test4_json)
         self.assertTrue(test3 == test4)
+
+    def test_leak(self):
+        test1 = Language(None)
+        self.assertFalse("Testlish" in test1.word_bag.keys())
 
     def test_difference(self):
         base_lang = Language(None, name="Base", script_type="no_script")
