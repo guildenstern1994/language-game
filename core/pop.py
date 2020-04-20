@@ -26,6 +26,20 @@ class Pop(object):
 			self.ethnicity = self.generate_ethnicity(ethnicity)
 			self.religion = self.generate_religion(religion)
 
+	def __eq__(self, other):
+		if type(other) is not Pop: return False
+		if self.location != other.location: return False
+		if self.home != other.home: return False
+		if self.age != other.age: return False
+		if self.languages != other.languages: return False
+		if self.cohort != other.cohort: return False
+		if self.uuid != other.uuid: return False
+		if self.socialclass != other.socialclass: return False
+		if self.profession != other.profession: return False
+		if self.ethnicity != other.ethnicity: return False
+		if self.religion != other.religion: return False
+		return True
+
 
 	def generate_uuid(self, override_value):
 		'''
@@ -97,7 +111,7 @@ class Pop(object):
 		self.age = json['age']
 		self.languages = json['languages']
 		self.cohort = json['cohort']
-		self.uuid = json['uuuid']
+		self.uuid = json['uuid']
 		self.socialclass = json['socialclass']
 		self.profession = json['profession']
 		self.ethnicity = json['ethnicity']
@@ -119,6 +133,7 @@ class Pop(object):
 		json['profession'] = self.profession
 		json['ethnicity'] = self.ethnicity
 		json['religion'] = self.religion
+		return json
 
 
 	def reproduce(self):
